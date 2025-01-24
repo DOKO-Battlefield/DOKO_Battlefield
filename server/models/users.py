@@ -1,9 +1,9 @@
+#models/users.py
 from sqlalchemy_serializer import SerializerMixin
-from sqlalchemy.ext.associationproxy import association_proxy
-import validators
+from sqlalchemy.orm import validates
 
-from config import db
-from association_table.user_room import user_rooms
+from config import db, bcrypt
+from models.association_table.user_room import user_rooms
 
 class User(db.Model, SerializerMixin):
     __tablename__ = 'users'
@@ -16,7 +16,7 @@ class User(db.Model, SerializerMixin):
     username = db.Column(db.String(80), nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
     _password_hash = db.Column(db.String(128), nullable=False)
-    bio = db.Column(db.String(500), default='Hi, I am passionate about discovering hidden gems and sharing travel tips from my adventures around the world.')
+    # bio = db.Column(db.String(500), default="Hi, I'm New To DOKO.")
     image = db.Column(db.String(500), default='https://static.vecteezy.com/system/resources/previews/016/774/588/original/3d-user-icon-on-transparent-background-free-png.png')
     created_at = db.Column(db.DateTime, server_default=db.func.now())
     updated_at = db.Column(db.DateTime, onupdate=db.func.now())
@@ -30,6 +30,8 @@ class User(db.Model, SerializerMixin):
     # User can have many Media
     medias = db.relationship('Media', back_populates='user', lazy=True)
     
+    waiting_list = db.relationship('WaitingList', back_populates='user', lazy=True)
+
     @validates('username')
     def validate_username(self, key, username):
         if not username or len(username) < 3:

@@ -1,3 +1,4 @@
+#association_table/user_room.py
 from config import db
 
 user_rooms = db.Table('user_rooms',

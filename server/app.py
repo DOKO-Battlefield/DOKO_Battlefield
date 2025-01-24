@@ -1,3 +1,4 @@
+#app.py
 #!/usr/bin/env python3
 
 # Standard library imports
@@ -5,11 +6,21 @@
 # Remote library imports
 from flask import request
 from flask_restful import Resource
-
+from apscheduler.schedulers.background import BackgroundScheduler
 # Local imports
 from config import app, db, api
 # Add your model imports
 from datetime import datetime
+from models.waiting_list import WaitingList  
+from utils.notifications import notify_users 
+from utils.hardware_api import trigger_necklace
+from routes.room import Room, CreateRoom, FetchRoomDetails
+from routes.auth import User, Register, Login, Logout, CheckSession
+from routes.media_folder import Media, Folder, SoftDeleteMedia, UploadMedia, DownloadMedia, FetchFolderMedia
+from routes.qr_code_for_waitinglist import QRCode, WaitingList, JoinWaitingList
+from routes.qrcode_room import Room, ScanQRCode, FetchRoomMedia
+
+
 
 def create_folder_and_media_for_user_and_room(user_id, room_id, media_data_list):
     # Step 1: Create a Folder for the user and room
@@ -34,12 +45,15 @@ def create_folder_and_media_for_user_and_room(user_id, room_id, media_data_list)
 
     return folder, media_data_list  # Optionally return the created data for verification
 
+scheduler = BackgroundScheduler()
+scheduler.add_job(func=notify_users, trigger="interval", seconds=60)  # Run notify_users every 60 seconds
+scheduler.start()
 
 # Views go here!
 
 @app.route('/')
 def index():
-    return '<h1>Project Server</h1>'
+    return '<h1>DOKO Battlefield Backend</h1>'
 
 
 if __name__ == '__main__':
