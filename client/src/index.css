@@ -5,3 +5,25 @@
   --text: hsla(0, 0%, 100%, 0.88);
 }
 
+/* index.css */
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+nav {
+  background-color: black;
+  color: white;
+  padding: 1rem;
+}
+
+a {
+  color: yellow;
+  text-decoration: none;
+}
+
+a:hover {
+  color: orange;
+}

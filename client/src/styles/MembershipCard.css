@@ -1,0 +1,54 @@
+.membership-card {
+    background-color: white;
+    color: black;
+    border-radius: 1rem;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.2s ease;
+  }
+  
+  .membership-card:hover {
+    transform: translateY(-4px);
+  }
+  
+  .membership-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .membership-price {
+    color: #a83321;
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  
+  .membership-perks {
+    text-align: left;
+    color: #444;
+    margin-bottom: 1.5rem;
+    padding-left: 0;
+    list-style: none;
+  }
+  
+  .membership-perks li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .membership-button {
+    background-color: #a82c21;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.5rem;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .membership-button:hover {
+    background-color: #9a2518;
+  }
+  

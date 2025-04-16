@@ -1,0 +1,36 @@
+.event-card {
+    background-color: white;
+    color: black;
+    border: 1px solid #ddd;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .event-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+  }
+  
+  .event-location {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 0.25rem;
+  }
+  
+  .event-date {
+    font-size: 0.9rem;
+    color: #3b82f6; /* blue-500 */
+    margin-bottom: 1rem;
+  }
+  
+  .event-description {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  

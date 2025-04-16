@@ -31,7 +31,51 @@ class JoinWaitingList(Resource):
             db.session.rollback()
             return make_response({'error': str(e)}, 400)
 
+
+class WaitingListStatus(Resource):
+    def get(self, qr_code):
+        try:
+            qr = QRCode.query.filter_by(code=qr_code).first()
+            if not qr:
+                return make_response({"message": "Invalid QR code."}, 404)
+
+            entry = WaitingList.query.filter_by(user_id=qr.user_id).first()
+            if not entry:
+                return make_response({
+                    "message": "User not in queue",
+                    "color": "off",
+                    "buzz": False
+                }, 200)
+
+
+            # Room color mapping (you can adjust as needed)
+            room_colors = {
+                "Room 1": "red",
+                "Room 2": "green",
+                "Room 3": "blue",
+                "Room 4": "yellow",
+                "Room 5": "cyan",
+                "Room 6": "magenta",
+                "Room 7": "orange",
+                "Room 8": "purple",
+                "Room 9": "white"
+            }
+
+            color = room_colors.get(entry.room_id, "white")
+            buzz = entry.position == 1  # Buzz if it's the user's turn
+
+            return make_response({
+                "room": entry.room.room_name,
+                "color": color,
+                "buzz": buzz,
+                "position": entry.position
+            }, 200)
+
+        except SQLAlchemyError as e:
+            return make_response({'error': str(e)}, 400)
+
+
+# Add both resources
 api.add_resource(JoinWaitingList, '/scan/waiting-list')
-
-
+api.add_resource(WaitingListStatus, '/waiting_list_status/<string:user_id>', endpoint='waiting_list_status')
 

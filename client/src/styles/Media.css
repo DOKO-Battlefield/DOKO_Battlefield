@@ -1,0 +1,21 @@
+.media-page {
+    padding: 2rem;
+    min-height: 100vh;
+    background-color: black;
+    color: white;
+  }
+  
+  .media-title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #f76555;
+  }
+  
+  .media-empty {
+    text-align: center;
+    color: #888;
+    font-size: 1rem;
+  }
+  

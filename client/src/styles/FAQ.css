@@ -1,0 +1,23 @@
+.faq-page {
+    padding: 2rem;
+    max-width: 768px;
+    margin: 0 auto;
+    background-color: black;
+    color: white;
+    min-height: 100vh;
+  }
+  
+  .faq-title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #f76355; /* optional purple accent */
+  }
+  
+  .faq-loading {
+    text-align: center;
+    color: #999;
+    font-size: 1rem;
+  }
+  

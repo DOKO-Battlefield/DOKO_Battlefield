@@ -1,0 +1,118 @@
+/* styles/GroupsAndTickets.css */
+
+.groups-page {
+    padding: 2rem;
+    background-color: black;
+    color: white;
+    min-height: 100vh;
+  }
+  
+  .groups-title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #f76d55;
+  }
+  
+  .groups-subtext {
+    text-align: center;
+    color: #ccc;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .groups-grid {
+    display: grid;
+    gap: 1.5rem;
+  }
+  
+  @media (min-width: 768px) {
+    .groups-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .group-card {
+    background: #1a1a1a;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    transition: transform 0.2s ease;
+  }
+  
+  .group-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .group-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #f76d55;
+  }
+  
+  .group-price {
+    font-size: 1.2rem;
+    color: #ddd;
+    margin-bottom: 1rem;
+  }
+  
+  .group-details {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #bbb;
+  }
+  
+  .booking-form {
+    background: #111;
+    padding: 2rem;
+    border-radius: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.05);
+  }
+  
+  .form-title {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #f76d55;
+  }
+  
+  .booking-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .booking-form input,
+  .booking-form textarea {
+    padding: 0.75rem 1rem;
+    border: 1px solid #444;
+    background-color: #222;
+    color: #fff;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+  }
+  
+  .booking-form button {
+    background: #f76d55;
+    color: #fff;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .booking-form button:hover {
+    background: #ff856d;
+  }
+  

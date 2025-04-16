@@ -1,0 +1,6 @@
+/* index.css */
+html, body {
+    touch-action: manipulation;
+    font-family: 'Inter', sans-serif;
+  }
+  

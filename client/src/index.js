@@ -1,8 +1,12 @@
-import React from "react";
-import App from "./components/App";
-import "./index.css";
-import { createRoot } from "react-dom/client";
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import { RouterProvider } from 'react-router-dom'
+import { router } from './router' // this should be your router setup
+import './index.css'
+import App from './App';
 
-const container = document.getElementById("root");
-const root = createRoot(container);
-root.render(<App />);
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <RouterProvider router={router} />
+  </React.StrictMode>
+)

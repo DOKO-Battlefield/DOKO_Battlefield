@@ -1,0 +1,33 @@
+.restaurant-card {
+    background-color: #ffffff;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 20px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .restaurant-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .restaurant-card a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .restaurant-card h2 {
+    margin-bottom: 8px;
+    font-size: 1.5rem;
+    color: #4b0082; /* Deep purple for vibe */
+  }
+  
+  .restaurant-card p {
+    font-size: 0.95rem;
+    color: #666;
+  }
+  
+  

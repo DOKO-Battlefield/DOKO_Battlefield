@@ -1,0 +1,38 @@
+.menu-card {
+    background-color: white;
+    color: black;
+    padding: 1.25rem;
+    border: 1px solid #ddd;
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1.5rem;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .menu-item-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+  
+  .menu-restaurant {
+    font-size: 0.875rem;
+    font-style: italic;
+    color: #666;
+  }
+  
+  .menu-description {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    color: #444;
+  }
+  
+  .menu-price {
+    font-size: 1.125rem;
+    font-weight: bold;
+    color: #059669; /* green-600 */
+    margin-top: 0.75rem;
+  }
+  

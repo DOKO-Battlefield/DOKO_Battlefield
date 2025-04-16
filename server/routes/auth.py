@@ -3,7 +3,6 @@ from flask import Flask, request, session, make_response
 from flask_restful import Resource
 from config import db, bcrypt, api, app
 from models.users import User
-from models.profile import Profile
 from sqlalchemy.exc import SQLAlchemyError
 
 class Register(Resource):
@@ -14,11 +13,6 @@ class Register(Resource):
             user = User(username=params.get('username'), email=params.get('email'))
             user.password_hash = bcrypt.generate_password_hash(params.get('password')).decode('utf-8')
             db.session.add(user)
-            db.session.commit()
-
-            # Create the Profile associated with the user
-            profile = Profile(user_id=user.id, bio=params.get('bio', ''), avatar_url=params.get('avatar_url', ''))
-            db.session.add(profile)
             db.session.commit()
 
             # Store the user ID in the session

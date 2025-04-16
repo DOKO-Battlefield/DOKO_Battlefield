@@ -1,0 +1,125 @@
+.home {
+    background-color: black;
+    color: white;
+    min-height: 100vh;
+  }
+  
+  /* Hero */
+  .hero {
+    background: linear-gradient(to bottom, #ee2a03, black);
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+  }
+  
+  .hero-button {
+    background-color: #ee2a03;
+    color: white;
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: background-color 0.2s;
+  }
+  
+  .hero-button:hover {
+    background-color: #ee2a03;
+  }
+  
+  /* About */
+  .about {
+    background-color: #1a1a1a;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .section-text {
+    color: #ccc;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Features */
+  .features {
+    background-color: black;
+    padding: 2rem;
+  }
+  
+  .features-grid {
+    display: grid;
+    gap: 1.5rem;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  
+  @media (min-width: 768px) {
+    .features-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  .feature-box {
+    background-color: #ee2a03;
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.2s;
+  }
+  
+  .feature-box:hover {
+    background-color: #ee2a03;
+  }
+  
+  /* How it works */
+  .how-it-works {
+    background-color: #1a1a1a;
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+  
+  .how-grid {
+    display: grid;
+    gap: 2rem;
+    color: #ddd;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  @media (min-width: 768px) {
+    .how-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .how-step h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Footer */
+  .footer {
+    background-color: black;
+    color: #777;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.875rem;
+  }
+  

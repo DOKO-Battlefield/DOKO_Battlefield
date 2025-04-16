@@ -1,0 +1,35 @@
+.membership-page {
+    padding: 2rem;
+    background-color: black;
+    color: white;
+    min-height: 100vh;
+  }
+  
+  .membership-title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #f76d55;
+  }
+  
+  .membership-subtext {
+    text-align: center;
+    color: #ccc;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .membership-grid {
+    display: grid;
+    gap: 1.5rem;
+  }
+  
+  @media (min-width: 768px) {
+    .membership-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  

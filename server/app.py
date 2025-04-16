@@ -4,7 +4,7 @@
 # Standard library imports
 
 # Remote library imports
-from flask import request
+from flask import request, make_response
 from flask_restful import Resource
 from apscheduler.schedulers.background import BackgroundScheduler
 # Local imports
@@ -17,8 +17,12 @@ from utils.hardware_api import trigger_necklace
 from routes.room import Room, CreateRoom, FetchRoomDetails
 from routes.auth import User, Register, Login, Logout, CheckSession
 from routes.media_folder import Media, Folder, SoftDeleteMedia, UploadMedia, DownloadMedia, FetchFolderMedia
-from routes.qr_code_for_waitinglist import QRCode, WaitingList, JoinWaitingList
-from routes.qrcode_room import Room, ScanQRCode, FetchRoomMedia
+from routes.qr_code_for_waitinglist import QRCode, WaitingList, JoinWaitingList, WaitingListStatus
+from routes.qrcode_room import Room, ScanQRCode, FetchRoomMedia, QRCode
+from routes.menu_item import MenuItemList, MenuItemById, MenuItem
+from routes.review import ReviewList, ReviewById, Review
+from routes.event import EventList, EventById, Event
+from routes.faq import FAQList, FAQById, FAQ
 
 
 
@@ -47,6 +51,10 @@ def create_folder_and_media_for_user_and_room(user_id, room_id, media_data_list)
 
 scheduler = BackgroundScheduler()
 scheduler.add_job(func=notify_users, trigger="interval", seconds=60)  # Run notify_users every 60 seconds
+def scheduled_notify_users():
+    with app.app_context():
+        notify_users()
+
 scheduler.start()
 
 # Views go here!
@@ -57,5 +65,5 @@ def index():
 
 
 if __name__ == '__main__':
-    app.run(port=5566, debug=True)
+    app.run(port=5000, debug=True)
 
