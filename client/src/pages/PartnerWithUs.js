@@ -27,7 +27,7 @@ const PartnerWithUs = () => {
         <div className="partner-card">
           <h2>📬 Contact Us</h2>
           <p>Let’s build something unforgettable. Reach out to share your ideas or request a collaboration.</p>
-          <Link to="/partners/contact" className="partner-link">Get In Touch</Link>
+          <Link to="/partners/contact-form" className="partner-link">Get In Touch</Link>
         </div>
       </div>
     </div>

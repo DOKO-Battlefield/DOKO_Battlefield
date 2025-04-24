@@ -7,16 +7,24 @@ export default function Home() {
     <div className="home">
 
       {/* Hero Banner */}
-      <section className="hero">
-        <h1 className="hero-title">Welcome to DOKO Battlefield</h1>
-        <p className="hero-subtitle">
-          Where combat becomes culture.  
-          Step into an immersive, tech-powered world of sport, story, and community.
-        </p>
-        <Link to="/events" className="hero-button">
-          Explore Upcoming Events
-        </Link>
-      </section>
+      <section className="hero video-hero">
+  <video autoPlay muted loop playsInline className="hero-video">
+    <source src="/videos/hero-bg.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <div className="hero-overlay">
+    <h1 className="hero-title">Welcome to DOKO Battlefield</h1>
+    <p className="hero-subtitle">
+      Where combat becomes culture.<br />
+      Step into a tech-powered world of tradition, adrenaline, and transformation.
+    </p>
+    <Link to="/events" className="hero-button">
+      Explore Upcoming Events
+    </Link>
+  </div>
+</section>
+
 
       {/* What is DOKO? */}
       <section className="about">

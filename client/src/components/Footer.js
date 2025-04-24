@@ -18,7 +18,6 @@ export default function Footer() {
           <Link to="/about">About</Link>
           <Link to="/faq">FAQ</Link>
           <Link to="/membership">Membership</Link>
-          <Link to="/reviews">Reviews</Link>
         </div>
 
         {/* Socials */}

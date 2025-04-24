@@ -45,6 +45,7 @@ import VenueCoBranding from './components/Venue&Co-Branding';
 import TeamBuilding from './components/TeamBuilding';
 import PrivateEvents from './components/PrivateEvents';
 import ScheduleAVisit from './components/ScheduleAVisit';
+import PartnerContactForm from "./components/ContactForm";
 
 
 
@@ -99,6 +100,7 @@ const routes = [
       { path: 'partners/team-building', element: <TeamBuilding /> },
       { path: 'partners/private-events', element: <PrivateEvents /> },
       { path: 'partners/schedule-visit', element: <ScheduleAVisit /> },
+      { path: 'partners/contact-form', element: <PartnerContactForm /> },
 
       { path: 'privacy', element: <PrivacyPolicy /> },
       { path: 'terms', element: <TermsOfUse /> },
