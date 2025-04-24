@@ -40,3 +40,80 @@
     color: #666;
   }
   
+  .footer {
+    background-color: #111;
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .footer-brand h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .footer-brand p {
+    color: #aaa;
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+  
+  .footer-socials h4,
+  .footer-newsletter h4 {
+    margin-bottom: 0.5rem;
+    color: #fff;
+  }
+  
+  .social-icons a {
+    margin: 0 0.75rem;
+    color: #ddd;
+    text-decoration: none;
+  }
+  
+  .social-icons a:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+  
+  .footer-newsletter input {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    width: 200px;
+  }
+  
+  .footer-newsletter button {
+    padding: 0.5rem 1rem;
+    background: #fff;
+    color: #111;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+  }
+  
+  .footer-newsletter button:hover {
+    background-color: #ddd;
+  }
+  
+  .footer-legal {
+    margin: 1.5rem 0;
+  }
+  
+  .footer-legal a {
+    margin: 0 1rem;
+    color: #bbb;
+    font-size: 0.9rem;
+    text-decoration: none;
+  }
+  
+  .footer-legal a:hover {
+    color: #fff;
+  }
+  
+  .footer-bottom {
+    font-size: 0.85rem;
+    color: #777;
+    margin-top: 1rem;
+  }
+  

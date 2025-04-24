@@ -6,17 +6,20 @@ import '../styles/Header.css';
 function Header() {
   const [open, setOpen] = useState(false);
 
+  <div className="logo">
+        <Link to="/">DOKO Battlefield</Link>
+      </div>
+
   const navLinks = [
     { name: "Home", to: "/" },
     { name: "Events", to: "/events" },
     { name: "Food & Drinks", to: "/restaurants" },
-    { name: "Reviews", to: "/reviews" },
-    { name: "Media", to: "/media" },
-    { name: "FAQ", to: "/faq" },
-    { name: "Membership", to: "/membership" },
-    { name: "About", to: "/about" },
-    { name: "Profile", to: "/profile" },
-    { name: "Groups & Tickets", to: "/groups&tickets"},
+    { name: "The Experience", to: "/experience" },
+    { name: "Media Vault", to: "/media" },
+    { name: "VR Game", to: "/game-info" },
+    { name: "Investors", to: "/investors" },
+    { name: "Partners", to: "/partners"},
+    { name: "Contact", to: "/contact"},
   ];
 
   return (
