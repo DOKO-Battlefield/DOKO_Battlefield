@@ -15,7 +15,7 @@ const PartnerWithUs = () => {
         <div className="partner-card">
           <h2>🔗 Collaboration Types</h2>
           <p>See the ways your brand or mission can align with DOKO’s cultural and combat-driven experiences.</p>
-          <Link to="/partners/collaboration" className="partner-link">Explore Collaboration Options</Link>
+          <Link to="/partners/collaboration-types" className="partner-link">Explore Collaboration Options</Link>
         </div>
 
         <div className="partner-card">

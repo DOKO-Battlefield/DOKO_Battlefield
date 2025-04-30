@@ -2,14 +2,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/MediaVault.css';
+import ComingSoonBanner from '../components/ComingSoonBanner';
 
 const MediaVault = () => {
   return (
     <div className="media-vault-container">
       <h1 className="vault-title">📁 DOKO Media Vault</h1>
       <p className="vault-intro">
-        Relive the action. Browse photos, testimonials, and private memories from your time at DOKO Battlefield.
+      From action shots to personal highlight reels, DOKO Media Vault is where you’ll find everything captured from your battles and experiences.
       </p>
+
+      <ComingSoonBanner message="Media access will be available at launch." />
 
       <div className="vault-grid">
         <div className="vault-card">

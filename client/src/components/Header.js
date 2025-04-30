@@ -16,7 +16,7 @@ function Header() {
     { name: "Food & Drinks", to: "/restaurants" },
     { name: "The Experience", to: "/experience" },
     { name: "Media Vault", to: "/media" },
-    { name: "VR Game", to: "/game-info" },
+    { name: "VR Game", to: "/vr-game" },
     { name: "Investors", to: "/investors" },
     { name: "Partners", to: "/partners"},
     { name: "Contact", to: "/contact"},
@@ -45,8 +45,8 @@ function Header() {
 
       {/* Right: Logo */}
       <div className="logo">
-        <img src="/DOKO_Battlefield.png" alt="Logo" className="logo-img" />
-        <h1 className="logo-text">DOKO</h1>
+        <img src="/DOKO_Battlefield.png" alt="Logo" className="logo-img1" />
+        {/* <h1 className="logo-text">DOKO</h1> */}
       </div>
     </div>
 

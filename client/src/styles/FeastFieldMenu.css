@@ -1,0 +1,27 @@
+.menu-page {
+  background-color: #fef9f4;
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+  font-family: 'Georgia', serif;
+}
+
+.menu-page h1 {
+  color: #4a2e1e;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.menu-page h2 {
+  color: #6c4c2c;
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  border-bottom: 2px solid #e0cbb0;
+}
+
+ul {
+  list-style: square;
+  padding-left: 1.5rem;
+  color: #5c442e;
+}

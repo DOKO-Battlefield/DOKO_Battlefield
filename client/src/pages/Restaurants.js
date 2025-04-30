@@ -1,63 +1,39 @@
 // src/pages/Restaurants.js
-import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import RestaurantCard from '../components/RestaurantCard';
 
+const restaurantData = [
+  {
+    name: 'DOKO Feast Field',
+    description: 'Luxury picnic experience with grill stations and fresh-prepared boards.',
+    link: '/restaurants/feast-field',
+    menuLink: '/menu/feast-field'
+  },
+  {
+    name: 'DOKOYonies',
+    description: 'Modern cultural comfort food in a refined indoor space.',
+    link: '/restaurants/dokoyonies',
+    menuLink: '/menu/dokoyonies'
+  },
+  {
+    name: 'DOKO Bar',
+    description: 'Signature mocktails and cultural beverages with a nightlife vibe.',
+    link: '/restaurants/bar',
+    menuLink: '/menu/bar'
+  }
+];
+
 export default function Restaurants() {
-  const [restaurants, setRestaurants] = useState([]);
-
-//   const restaurants = [
-//     {
-//       name: 'Old School',
-//       type: 'Restaurant',
-//       price: '$$'
-//     },
-//     {
-//       name: 'DOKOyanies',
-//       type: 'Restaurant',
-//       price: '$$$'
-//     },
-//     {
-//       name: 'Warrior Bar',
-//       type: 'Bar',
-//       price: '$$'
-//     }
-//   ];
-
-  useEffect(() => {
-    fetch('http://localhost:5000/menu-items')
-      .then(res => res.json())
-      .then(data => {
-        // Group by restaurant_name
-        const grouped = {};
-        data.forEach(item => {
-          if (!grouped[item.restaurant_name]) {
-            grouped[item.restaurant_name] = {
-              name: item.restaurant_name,
-              items: []
-            };
-          }
-          grouped[item.restaurant_name].items.push(item);
-        });
-
-        // Convert to array and set state
-        const restaurantArray = Object.values(grouped);
-        setRestaurants(restaurantArray);
-      });
-  }, []);
-
   return (
     <div className="restaurants-page">
-      <h1>Our Restaurants</h1>
+      <h1>🍽️ Explore DOKO Dining</h1>
       <div className="restaurant-list">
-        {restaurants.map((restaurant, index) => (
-          <RestaurantCard
-            key={index}
-            restaurant={restaurant}
-            index={index}
-          />
+        {restaurantData.map((restaurant, index) => (
+          <Link key={index} to={restaurant.link}>
+            <RestaurantCard restaurant={restaurant} />
+          </Link>
         ))}
       </div>
     </div>
   );
 }
-

@@ -1,0 +1,29 @@
+.menu-page {
+    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+    color: #fff;
+    padding: 2rem;
+    max-width: 900px;
+    margin: auto;
+    font-family: 'Orbitron', sans-serif;
+  }
+  
+  .menu-page h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #c048ec;
+    margin-bottom: 1rem;
+  }
+  
+  .menu-page h2 {
+    color: #ff77e9;
+    font-size: 1.4rem;
+    margin-top: 2rem;
+    border-bottom: 2px solid #ff77e9;
+  }
+  
+  ul {
+    padding-left: 1rem;
+    color: #ccc;
+    list-style: disc;
+  }
+  

@@ -1,6 +1,7 @@
 // src/pages/Home.js
 import { Link } from 'react-router-dom';
 import '../styles/Home.css';
+import ComingSoonBanner from '../components/ComingSoonBanner'; // ✅ Make sure this exists
 
 export default function Home() {
   return (
@@ -14,14 +15,19 @@ export default function Home() {
   </video>
 
   <div className="hero-overlay">
+  <div className="logo">
+        <img src="/DOKO_Battlefield.png" alt="Logo" className="logo-img" />
+        {/* <h1 className="logo-text">DOKO</h1> */}
+      </div>
     <h1 className="hero-title">Welcome to DOKO Battlefield</h1>
     <p className="hero-subtitle">
       Where combat becomes culture.<br />
-      Step into a tech-powered world of tradition, adrenaline, and transformation.
+      Step into a tech-powered world of sport, tradition, and transformation.
     </p>
     <Link to="/events" className="hero-button">
       Explore Upcoming Events
     </Link>
+    <ComingSoonBanner  />
   </div>
 </section>
 
@@ -30,12 +36,11 @@ export default function Home() {
       <section className="about">
         <h2 className="section-title">What is DOKO?</h2>
         <p className="section-text">
-          <strong>DOKO Battlefield</strong> is a real-world arena where ancient warrior arts meet next-gen wearable tech. 
-          From kendo to dagger throwing, archery to fencing — players enter themed training rooms, earn media of their journey, 
-          and become part of a bold new movement in immersive combat entertainment.
+          <strong>DOKO Battlefield</strong> is a real-world arena where combat sports and immersive tech collide.  
+          Guests train, compete, and enhance their journey with smart wearables that capture their highlights.
         </p>
         <p className="section-text">
-          Designed for solo warriors, teams, families, and creatives — DOKO is a space for transformation, joy, challenge, and community.
+          Designed for solo warriors, teams, families, and creatives — DOKO is a space for anyone seeking challenge, joy, and community.
         </p>
       </section>
 
@@ -44,7 +49,7 @@ export default function Home() {
         <div className="features-grid">
           <Link to="/menu" className="feature-box">
             <h3>Food & Drink</h3>
-            <p>Refuel at Turf Grill, Warrior Bar, and our themed restaurants</p>
+            <p>Feast Field, Warrior Bar, and DOKOYonies</p>
           </Link>
           <Link to="/media" className="feature-box">
             <h3>Media Vault</h3>
@@ -52,7 +57,7 @@ export default function Home() {
           </Link>
           <Link to="/reviews" className="feature-box">
             <h3>Community Voices</h3>
-            <p>See what guests and players are saying</p>
+            <p>Hear what others say about their time at DOKO</p>
           </Link>
           <Link to="/membership" className="feature-box">
             <h3>Memberships & Specials</h3>
@@ -70,8 +75,8 @@ export default function Home() {
             <p>Use our front tablet kiosk to register and receive your smart necklace.</p>
           </div>
           <div className="how-step">
-            <h3>2. Compete & Flow</h3>
-            <p>Enter rooms, track queue status, and complete challenges in real time.</p>
+            <h3>2. Enjoy Your Experience</h3>
+            <p>Enter rooms, track queue status, and complete physical missions.</p>
           </div>
           <div className="how-step">
             <h3>3. Relive & Share</h3>
