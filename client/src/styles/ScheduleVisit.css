@@ -1,0 +1,64 @@
+/* Schedule Visit Page */
+.event-card {
+    background-color: black;
+    color: white;
+    min-height: 100vh;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  /* Card */
+  .schedule-card {
+    background-color: #1a1a1a;
+    color: white;
+    border: 1px solid #333;
+    border-radius: 1rem;
+    padding: 2rem;
+    max-width: 700px;
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .schedule-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.08);
+  }
+  
+  h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+  
+  p {
+    font-size: 1.1rem;
+    color: #ccc;
+    margin-bottom: 1rem;
+  }
+  
+  .tag {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #ee2a03;
+    margin-bottom: 1.5rem;
+  }
+  
+  .event-link {
+    display: inline-block;
+    background-color: #ee2a03;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+  }
+  
+  .event-link:hover {
+    background-color: #c52202;
+  }
+  

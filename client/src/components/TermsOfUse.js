@@ -1,9 +1,9 @@
-// src/pages/TermsOfUse.js
 import React from 'react';
+import '../styles/TermsOfUse.css';
 
 const TermsOfUse = () => {
   return (
-    <div style={{ padding: '2rem', maxWidth: '800px', margin: 'auto' }}>
+    <div className="terms-container">
       <h1>Terms of Use</h1>
       <p>
         By accessing or using the DOKO Battlefield website and services, you agree to the following terms:
@@ -38,3 +38,4 @@ const TermsOfUse = () => {
 };
 
 export default TermsOfUse;
+

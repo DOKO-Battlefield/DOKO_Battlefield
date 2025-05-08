@@ -1,0 +1,69 @@
+/* vr-game.css */
+.vr-game-page {
+    background-color: black;
+    color: white;
+    padding: 2rem;
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+  }
+  
+  .vr-game-page h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #f76355;
+  }
+  
+  .vr-game-page p {
+    font-size: 1.1rem;
+    color: #ccc;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    line-height: 1.6;
+  }
+  
+  .vr-nav-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    margin-top: 2rem;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .vr-link-card {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .vr-link-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  }
+  
+  .vr-link-card h2 {
+    font-size: 1.3rem;
+    color: #f76355;
+    margin-bottom: 1rem;
+  }
+  
+  .vr-game-link {
+    display: inline-block;
+    background: #f76355;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+  
+  .vr-game-link:hover {
+    background: #d84c40;
+  }
+  

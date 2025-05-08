@@ -24,9 +24,10 @@ export default function Footer() {
         <div className="footer-socials">
           <h4>Follow Us</h4>
           <div className="social-icons">
-            <a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a>
-            <a href="https://tiktok.com" target="_blank" rel="noreferrer">TikTok</a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="https://www.instagram.com/doko_battlefield/" target="_blank" rel="noreferrer">Instagram</a>
+            <a href="https://www.tiktok.com/@doko_battlefield" target="_blank" rel="noreferrer">TikTok</a>
+            <a href="https://www.linkedin.com/company/doko-battlefield" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="https://www.facebook.com/profile.php?id=61575929885729" target="_blank" rel="noreferrer">Facebook</a>
           </div>
         </div>
 

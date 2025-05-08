@@ -1,9 +1,9 @@
-// src/pages/PrivacyPolicy.js
 import React from 'react';
+import '../styles/PrivacyPolicy.css';
 
 const PrivacyPolicy = () => {
   return (
-    <div style={{ padding: '2rem', maxWidth: '800px', margin: 'auto' }}>
+    <div className="privacy-container">
       <h1>Privacy Policy</h1>
       <p>
         DOKO Battlefield values your privacy. This policy outlines how we collect, use, and protect your information when you visit our website or use our services.

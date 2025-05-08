@@ -1,0 +1,45 @@
+.investor-page {
+    padding: 2rem;
+    max-width: 900px;
+    margin: auto;
+    color: white;
+    background-color: black;
+    min-height: 100vh;
+  }
+  
+  .investor-page h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #f97316;
+    margin-bottom: 2rem;
+  }
+  
+  .team-card.solo {
+    background-color: #1a1a1a;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+    text-align: center;
+  }
+  
+  .team-photo {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    border: 3px solid #f97316;
+  }
+  
+  .team-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+  }
+  
+  .team-card p {
+    font-size: 1.05rem;
+    color: #ccc;
+    line-height: 1.6;
+  }
+  

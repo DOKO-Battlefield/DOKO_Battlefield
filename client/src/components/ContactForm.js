@@ -1,16 +1,26 @@
 // src/components/PartnerContactForm.js
 import React, { useState } from 'react';
+import '../styles/PartnerContactForm.css';
 
 const PartnerContactForm = () => {
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({ name: '', email: '', organization: '', message: '' });
 
   const handleChange = e => setForm({ ...form, [e.target.name]: e.target.value });
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
-    console.log("Partner form submitted:", form);
-    setSubmitted(true);
+    try {
+      const response = await fetch('http://localhost:5000//api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form)
+      });
+      if (response.ok) setSubmitted(true);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    }
   };
+  
 
   return (
     <div className="partner-page">

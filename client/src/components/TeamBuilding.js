@@ -1,6 +1,8 @@
 // src/pages/TeamBuilding.js
 import React from 'react';
 import ComingSoonBanner from '../components/ComingSoonBanner';
+import '../styles/TeamBuilding.css';
+
 
 const TeamBuilding = () => {
   return (

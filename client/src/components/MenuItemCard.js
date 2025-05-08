@@ -1,5 +1,6 @@
 // src/components/MenuItemCard.js
 import '../styles/MenuItemCard.css';
+import '../styles/Membership.css';
 import React from 'react'
 
 export default function MenuItemCard({ item }) {

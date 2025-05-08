@@ -47,7 +47,7 @@ export default function Home() {
       {/* Featured Sections */}
       <section className="features">
         <div className="features-grid">
-          <Link to="/menu" className="feature-box">
+          <Link to="/restaurants" className="feature-box">
             <h3>Food & Drink</h3>
             <p>Feast Field, Warrior Bar, and DOKOYonies</p>
           </Link>
@@ -55,7 +55,7 @@ export default function Home() {
             <h3>Media Vault</h3>
             <p>Explore public galleries or log in to view your visit</p>
           </Link>
-          <Link to="/reviews" className="feature-box">
+          <Link to="/media/testimonials" className="feature-box">
             <h3>Community Voices</h3>
             <p>Hear what others say about their time at DOKO</p>
           </Link>

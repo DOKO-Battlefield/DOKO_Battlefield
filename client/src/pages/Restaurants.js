@@ -1,6 +1,8 @@
 // src/pages/Restaurants.js
 import { Link } from 'react-router-dom';
 import RestaurantCard from '../components/RestaurantCard';
+import '../styles/Restaurants.css';
+
 
 const restaurantData = [
   {

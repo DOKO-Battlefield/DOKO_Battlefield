@@ -16,12 +16,20 @@ const Contact = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async e => {
     e.preventDefault();
-    // TODO: Add fetch to backend or third-party service
-    console.log("Submitted data:", formData);
-    setSubmitted(true);
+    try {
+      const response = await fetch('http://localhost:5000//api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+      if (response.ok) setSubmitted(true);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    }
   };
+  
 
   return (
     <div className="contact-container">

@@ -1,0 +1,66 @@
+/* Roadmap Page Styling */
+.investor-page {
+    background-color: black;
+    color: white;
+    min-height: 100vh;
+    padding: 2rem;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  /* Title */
+  .investor-page h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #ee2a03;
+    margin-bottom: 1rem;
+  }
+  
+  /* Intro Text */
+  .investor-page p {
+    font-size: 1.2rem;
+    text-align: center;
+    color: #ccc;
+    margin-bottom: 3rem;
+  }
+  
+  /* Timeline Container */
+  .investor-page ul {
+    list-style: none;
+    padding: 0;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    border-left: 4px solid #ee2a03;
+  }
+  
+  /* Timeline Item */
+  .investor-page li {
+    position: relative;
+    padding: 1rem 1.5rem;
+    margin-bottom: 2rem;
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+    margin-left: 1rem;
+  }
+  
+  /* Timeline Dot */
+  .investor-page li::before {
+    content: '';
+    position: absolute;
+    left: -1.15rem;
+    top: 1rem;
+    width: 16px;
+    height: 16px;
+    background-color: #ee2a03;
+    border: 3px solid black;
+    border-radius: 50%;
+  }
+  
+  /* Quarter Styling */
+  .investor-page li strong {
+    color: #ff8364;
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+  

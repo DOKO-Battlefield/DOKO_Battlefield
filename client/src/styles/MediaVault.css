@@ -1,45 +1,58 @@
 .media-vault-container {
-    padding: 2rem;
-    max-width: 1100px;
-    margin: auto;
-    text-align: center;
-  }
-  
-  .vault-title {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .vault-intro {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    color: #555;
-  }
-  
-  .vault-grid {
-    display: grid;
-    gap: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  }
-  
-  .vault-card {
-    background: #f9f9f9;
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  }
-  
-  .vault-link {
-    display: inline-block;
-    margin-top: 1rem;
-    background: #000;
-    color: #fff;
-    padding: 0.6rem 1.2rem;
-    border-radius: 6px;
-    text-decoration: none;
-  }
-  
-  .vault-link:hover {
-    background: #333;
-  }
-  
+  padding: 4rem 2rem;
+  max-width: 1100px;
+  margin: auto;
+  text-align: center;
+  background-color: black;
+  color: white;
+}
+
+.vault-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #ee2a03;
+  margin-bottom: 1rem;
+}
+
+.vault-intro {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #ccc;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.vault-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.vault-card {
+  background: #1a1a1a;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.05);
+  transition: transform 0.3s ease;
+}
+
+.vault-card:hover {
+  transform: translateY(-5px);
+}
+
+.vault-link {
+  display: inline-block;
+  margin-top: 1rem;
+  background: #ee2a03;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.vault-link:hover {
+  background: #ff3b1f;
+}

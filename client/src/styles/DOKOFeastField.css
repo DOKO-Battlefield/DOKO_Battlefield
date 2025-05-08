@@ -1,0 +1,39 @@
+.restaurant-page {
+    background-color: #fffaf5;
+    color: #5a3e2f;
+    padding: 2rem;
+    min-height: 100vh;
+    font-family: 'Georgia', serif;
+  }
+  
+  .restaurant-page h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #8b5e3c;
+    margin-bottom: 1rem;
+  }
+  
+  .restaurant-page p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 1rem auto;
+    line-height: 1.6;
+    color: #5a3e2f;
+  }
+  
+  .menu-link {
+    display: inline-block;
+    margin-top: 2rem;
+    background-color: #8b5e3c;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+  }
+  
+  .menu-link:hover {
+    background-color: #a06b42;
+  }
+  

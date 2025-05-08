@@ -1,6 +1,8 @@
 // src/pages/PrivateEvents.js
 import React from 'react';
 import ComingSoonBanner from '../components/ComingSoonBanner';
+import '../styles/PrivateEvents.css';
+
 
 const PrivateEvents = () => {
   return (

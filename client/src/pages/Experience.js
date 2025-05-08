@@ -21,7 +21,7 @@ const Experience = () => {
           Train like a warrior in kendo, dagger throwing, axe throwing, fencing, and archery — all taught by certified instructors in real and virtual arenas. 
           Each room is styled with cultural influence and custom video recaps of your sessions.
         </p>
-        <Link to="/experience/combat">Explore Combat</Link>
+        <Link to="/experience/combat" className="experience-link">Explore Combat</Link>
       </section>
 
       {/* VR Walkthrough */}
@@ -30,7 +30,7 @@ const Experience = () => {
         <p>
           Step inside before you arrive. Our virtual walkthrough lets you explore the facility in full 3D, complete with blossoms, bridges, and battle zones.
         </p>
-        <Link to="/experience/vr-tour">Enter Walkthrough</Link>
+        <Link to="/experience/vr-tour" className="experience-link">Enter Walkthrough</Link>
 
       </section>
 
@@ -41,7 +41,7 @@ const Experience = () => {
           Every visitor wears a custom QR-enabled necklace that tracks wait times, media, and matches. It even lights up and buzzes when it’s your turn!
           Guests can access photos/videos of their visit online anytime.
         </p>
-        <Link to="/experience/wearables">See How It Works</Link>
+        <Link to="/experience/wearables" className="experience-link">See How It Works</Link>
       </section>
 
       {/* Memberships */}

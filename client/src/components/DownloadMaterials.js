@@ -12,7 +12,7 @@ const DownloadMaterials = () => {
 
       <div className="download-list">
         <a
-          href="/docs/DOKO_Pitch_Deck.pdf"
+          href="/DOKO_Pitch_Deck.pdf"
           download
           className="download-link"
         >
@@ -20,7 +20,7 @@ const DownloadMaterials = () => {
         </a>
 
         <a
-          href="/docs/DOKO_One_Pager.pdf"
+          href="/OnePager.pdf"
           download
           className="download-link"
         >
@@ -28,7 +28,7 @@ const DownloadMaterials = () => {
         </a>
 
         <a
-          href="/docs/Financial_Projections.pdf"
+          href="/Financial_Projections.pdf"
           download
           className="download-link"
         >
@@ -36,7 +36,7 @@ const DownloadMaterials = () => {
         </a>
 
         <a
-          href="/docs/Founder_Vision_Letter.pdf"
+          href="/Founder_Vision_Letter.pdf"
           download
           className="download-link"
         >
@@ -46,7 +46,7 @@ const DownloadMaterials = () => {
 
       <p className="note">
         Need a personalized walk-through or data room access?  
-        Email <strong>invest@dokobattlefield.com</strong>
+        Email <strong>treneese.johnson@dokobattlefield.com</strong>
       </p>
     </div>
   );

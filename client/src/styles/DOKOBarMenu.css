@@ -1,29 +1,34 @@
-.menu-page {
-    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
-    color: #fff;
-    padding: 2rem;
+
+  .menu-page {
+    background: black;
+    color: white;
+    padding: 4rem 2rem;
     max-width: 900px;
     margin: auto;
     font-family: 'Orbitron', sans-serif;
+    text-align: center;
   }
   
   .menu-page h1 {
-    text-align: center;
     font-size: 2.5rem;
-    color: #c048ec;
-    margin-bottom: 1rem;
+    font-weight: bold;
+    color: #ee2a03;
+    margin-bottom: 2rem;
   }
   
   .menu-page h2 {
-    color: #ff77e9;
-    font-size: 1.4rem;
+    color: #fff;
+    font-size: 1.5rem;
     margin-top: 2rem;
-    border-bottom: 2px solid #ff77e9;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #ee2a03;
   }
   
   ul {
-    padding-left: 1rem;
-    color: #ccc;
     list-style: disc;
+    padding-left: 1.5rem;
+    color: #ccc;
+    text-align: left;
   }
+  
   

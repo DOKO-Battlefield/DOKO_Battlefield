@@ -1,6 +1,7 @@
 // src/components/DOKOFeastField.js
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../styles/DOKOFeastField.css';
 
 const DOKOFeastField = () => {
   return (

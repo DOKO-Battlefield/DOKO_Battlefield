@@ -1,6 +1,7 @@
 // src/components/Gallery.js
 import React from 'react';
 import ComingSoonBanner from '../components/ComingSoonBanner';
+import '../styles/Gallery.css';
 
 const Gallery = () => {
   return (

@@ -1,55 +1,66 @@
 .experience-container {
-    padding: 2rem;
-    max-width: 1100px;
-    margin: auto;
-  }
-  
-  .experience-title {
-    text-align: center;
-    font-size: 2.8rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .experience-intro {
-    text-align: center;
-    font-size: 1.2rem;
-    margin-bottom: 3rem;
-    color: #555;
-  }
-  
-  .experience-section {
-    margin-bottom: 3rem;
-  }
-  
-  .experience-section h2 {
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .experience-section p {
-    font-size: 1rem;
-    color: #333;
-    margin-bottom: 1rem;
-  }
-  
-  .experience-image {
-    width: 100%;
-    max-height: 300px;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.15);
-  }
-  
-  .experience-link {
-    display: inline-block;
-    background-color: #000;
-    color: #fff;
-    padding: 0.6rem 1.2rem;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  .experience-link:hover {
-    background-color: #333;
-  }
-  
+  padding: 4rem 2rem;
+  max-width: 1100px;
+  margin: auto;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+.experience-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: #ee2a03;
+}
+
+.experience-intro {
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  color: #ccc;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.experience-section {
+  margin-bottom: 3rem;
+  text-align: left;
+}
+
+.experience-section h2 {
+  font-size: 1.8rem;
+  color: #ee2a03;
+  margin-bottom: 0.5rem;
+}
+
+.experience-section p {
+  font-size: 1rem;
+  color: #ddd;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.experience-image {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.05);
+}
+
+.experience-link {
+  display: inline-block;
+  background-color: #ee2a03;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  border-radius: 999px;
+  text-decoration: none;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.experience-link:hover {
+  background-color: #ff3b1f;
+}

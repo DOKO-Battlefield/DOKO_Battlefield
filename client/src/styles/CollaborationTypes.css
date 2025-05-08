@@ -1,25 +1,29 @@
 .partner-page {
-    padding: 2rem;
-    max-width: 1000px;
-    margin: auto;
-    font-family: 'Segoe UI', sans-serif;
-  }
-  
-  .collab-types-list {
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-  
-  .collab-type h2 {
-    font-size: 1.3rem;
-    color: #333;
-    margin-bottom: 0.5rem;
-  }
-  
-  .collab-type p {
-    font-size: 1rem;
-    color: #666;
-  }
+  padding: 4rem 2rem;
+  max-width: 1000px;
+  margin: auto;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+.collab-types-list {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.collab-type h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ee2a03;
+  margin-bottom: 0.5rem;
+}
+
+.collab-type p {
+  font-size: 1.05rem;
+  color: #ccc;
+  line-height: 1.6;
+}
   

@@ -1,44 +1,27 @@
 // src/components/TeamAndAdvisors.js
 import React from 'react';
-
-const team = [
-  {
-    name: 'Treneese Johnson',
-    role: 'Founder & CEO',
-    bio: 'Artist, filmmaker, engineer. Visionary behind DOKO Battlefield. 10+ years in art & storytelling, software engineering, and immersive media.',
-  },
-  {
-    name: 'Mentor TBD',
-    role: 'Advisor – Cultural Strategy',
-    bio: 'Historian and spiritual advisor specializing in Black cultural heritage, traditions, and rites of passage.',
-  },
-  {
-    name: 'Mentor TBD',
-    role: 'Advisor – Tech/VR',
-    bio: 'Expert in immersive environments, Unity/Unreal development, and virtual combat systems.',
-  },
-  {
-    name: 'Mentor TBD',
-    role: 'Advisor – Business/Funding',
-    bio: 'Experienced in launching experiential businesses, raising capital, and creating community-based monetization models.',
-  },
-];
+import '../styles/TeamAndAdvisors.css';
 
 const TeamAndAdvisors = () => {
   return (
     <div className="investor-page">
-      <h1>👥 Team & Advisors</h1>
-      <div className="team-grid">
-        {team.map((member, index) => (
-          <div key={index} className="team-card">
-            <h3>{member.name}</h3>
-            <p><strong>{member.role}</strong></p>
-            <p>{member.bio}</p>
-          </div>
-        ))}
+      <h1>Meet the Founder</h1>
+      <div className="team-card solo">
+        <img src="/Treneese.png" alt="Treneese Johnson" className="team-photo" />
+        <h3>Treneese Johnson</h3>
+        <p><strong>Founder & CEO</strong></p>
+        <p>
+          Treneese Johnson is an artist, filmmaker, software engineer, and visionary behind DOKO Battlefield. 
+          With over 10 years of experience in storytelling, visual arts, and immersive media, she blends culture, combat sports, and technology to build meaningful experiences.
+          A graduate of Clark Atlanta University with a B.A. in Mass Media Arts and a certified full-stack engineer through Flatiron School, 
+          Treneese’s mission is to create culturally grounded, tech-forward spaces for community, creativity, and empowerment. 
+          Her work spans VR game development, interactive museum concepts, and software that merges art and functionality. 
+          As a mother, founder, and faith-centered creator, she builds with legacy, equity, and impact at the core.
+        </p>
       </div>
     </div>
   );
 };
 
 export default TeamAndAdvisors;
+

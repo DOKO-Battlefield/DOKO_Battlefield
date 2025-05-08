@@ -1,0 +1,39 @@
+.restaurant-page {
+    background: linear-gradient(to bottom, #1a1a1a, #2c2c2c);
+    color: #f2f2f2;
+    padding: 2rem;
+    min-height: 100vh;
+    font-family: 'Orbitron', sans-serif;
+  }
+  
+  .restaurant-page h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #c048ec;
+    margin-bottom: 1rem;
+  }
+  
+  .restaurant-page p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 1rem auto;
+    line-height: 1.6;
+    color: #dcdcdc;
+  }
+  
+  .menu-link {
+    display: inline-block;
+    margin-top: 2rem;
+    background-color: #c048ec;
+    color: black;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+  }
+  
+  .menu-link:hover {
+    background-color: #d36df1;
+  }
+  

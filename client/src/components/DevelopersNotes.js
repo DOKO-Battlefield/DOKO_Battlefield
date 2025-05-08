@@ -1,5 +1,6 @@
 import React from 'react';
 import ComingSoonBanner from '../components/ComingSoonBanner';
+import '../styles/DevelopersNotes.css';
 
 const DevelopersNotes = () => {
   return (

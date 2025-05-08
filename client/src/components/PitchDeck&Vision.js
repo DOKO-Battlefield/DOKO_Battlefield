@@ -12,7 +12,7 @@ const PitchDeckVision = () => {
       <div className="deck-container">
         {/* Embed a Google Drive or PDF viewer if you have it */}
         <iframe
-          src="https://drive.google.com/file/d/your-deck-id/preview"
+          src="https://drive.google.com/file/d/1CY36ke985GR-L15kQwuKYR4npBAoqZOQ/preview"
           title="DOKO Pitch Deck"
           width="100%"
           height="600"
@@ -22,7 +22,7 @@ const PitchDeckVision = () => {
       </div>
 
       <p className="note">
-        For a live walkthrough or one-on-one investor call, contact us at: <strong>invest@dokobattlefield.com</strong>
+        For a live walkthrough or one-on-one investor call, contact us at: <strong>treneese.johnson@dokobattlefield.com</strong>
       </p>
     </div>
   );

@@ -1,18 +1,18 @@
-// src/pages/TeamBuilding.js
+// src/pages/ScheduleVisit.js
 import React from 'react';
-import ComingSoonBanner from '../components/ComingSoonBanner';
+import { Link } from 'react-router-dom';
+import '../styles/ScheduleVisit.css'; 
 
-const TeamBuilding = () => {
+
+const ScheduleVisit = () => {
   return (
-    <div className="event-detail-page">
-      <h1>🤝 DOKO Team Building Packages</h1>
-      <p>
-        Boost your team's morale, trust, and creativity through immersive combat-based missions and interactive storytelling.
-        Designed for organizations, leadership retreats, schools, and more.
-      </p>
-      <ComingSoonBanner message="Team Building packages are under development. Launching soon!" />
+    <div className="event-card">
+      <h3>📆 Schedule a Visit</h3>
+      <p>Coming with your family or group of friends? Choose your size and ideal time — our team will follow up!</p>
+      <p className="tag">Coming Soon</p>
+      <Link to="/events/schedule" className="event-link">Schedule Now</Link>
     </div>
   );
 };
 
-export default TeamBuilding;
+export default ScheduleVisit;

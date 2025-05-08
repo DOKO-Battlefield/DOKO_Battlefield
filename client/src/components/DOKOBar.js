@@ -1,6 +1,7 @@
 // src/components/DOKOBar.js
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../styles/DOKOBar.css';
 
 const DOKOBar = () => {
   return (

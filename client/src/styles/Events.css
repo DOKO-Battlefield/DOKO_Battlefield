@@ -1,60 +1,95 @@
 .events-page {
-    padding: 2rem;
-    min-height: 100vh;
-    background-color: black;
-    color: white;
-  }
-  
-  .events-title {
-    font-size: 2rem;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-  
-  .no-events {
-    text-align: center;
-    color: #888;
-    font-size: 1rem;
-  }
-  
-  .events-container {
-    padding: 2rem;
-    max-width: 1100px;
-    margin: auto;
-    text-align: center;
-  }
-  
-  .events-intro {
-    font-size: 1.2rem;
-    margin-bottom: 3rem;
-    color: #555;
-  }
-  
-  .events-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-  }
-  
-  .event-card {
-    background: #f8f8f8;
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  }
-  
-  .event-link {
-    display: inline-block;
-    margin-top: 1rem;
-    background: #000;
-    color: #fff;
-    padding: 0.6rem 1.2rem;
-    border-radius: 6px;
-    text-decoration: none;
-  }
-  
-  .event-link:hover {
-    background: #333;
-  }
-  
+  padding: 4rem 2rem;
+  min-height: 100vh;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+.events-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  color: #ee2a03;
+}
+
+.events-intro {
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  color: #ccc;
+}
+
+.no-events {
+  font-size: 1.1rem;
+  color: #777;
+}
+
+.events-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.event-card {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 1.5rem;
+  border: 1px solid #333;
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.04);
+  transition: transform 0.2s ease;
+  max-width: 640px;
+  margin: auto;
+}
+
+.event-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.06);
+}
+
+.event-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.event-location {
+  font-style: italic;
+  font-size: 1rem;
+  color: #aaa;
+  margin-bottom: 0.25rem;
+}
+
+.event-date {
+  font-size: 1rem;
+  color: #3b82f6;
+  margin-bottom: 1rem;
+}
+
+.event-description {
+  font-size: 1rem;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.event-link {
+  display: inline-block;
+  margin-top: 1.25rem;
+  background: #ee2a03;
+  color: white;
+  padding: 0.6rem 1.4rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.event-link:hover {
+  background-color: #ff3d1f;
+}

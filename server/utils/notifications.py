@@ -2,7 +2,7 @@
 from datetime import datetime, timedelta
 from models.waiting_list import WaitingList
 
-from utils.hardware_api import trigger_necklace  # This can be a separate file too
+from utils.hardware_api import trigger_necklace  
 from config import db
 
 def notify_users():

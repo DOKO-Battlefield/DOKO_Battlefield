@@ -1,0 +1,38 @@
+/* Private Events Page Styling */
+.event-detail-page {
+    background-color: black;
+    color: white;
+    min-height: 100vh;
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Title Styling */
+   h1 {
+    font-size: 2.5rem;
+    color: #ee2a03;
+    margin-bottom: 1rem;
+  }
+  
+  /* Description Styling */
+  p {
+    font-size: 1.1rem;
+    color: #ccc;
+    max-width: 800px;
+    margin-bottom: 2rem;
+  }
+  
+  /* Coming Soon Banner Styling (if customized here) */
+  .coming-soon-banner {
+    margin-top: 2rem;
+    padding: 1rem 1.5rem;
+    background-color: #222;
+    border-left: 4px solid #ee2a03;
+    color: #f1f1f1;
+    border-radius: 6px;
+    font-weight: 600;
+  }
+  

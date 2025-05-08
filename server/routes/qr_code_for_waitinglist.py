@@ -77,5 +77,6 @@ class WaitingListStatus(Resource):
 
 # Add both resources
 api.add_resource(JoinWaitingList, '/scan/waiting-list')
-api.add_resource(WaitingListStatus, '/waiting_list_status/<string:user_id>', endpoint='waiting_list_status')
+api.add_resource(WaitingListStatus, '/waiting_list_status/<string:qr_code>', endpoint='waiting_list_status')
+
 

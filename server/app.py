@@ -7,8 +7,9 @@
 from flask import request, make_response
 from flask_restful import Resource
 from apscheduler.schedulers.background import BackgroundScheduler
+from flask_apscheduler import APScheduler
 # Local imports
-from config import app, db, api
+from config import app, db, api, Flask
 # Add your model imports
 from datetime import datetime
 from models.waiting_list import WaitingList  
@@ -23,6 +24,7 @@ from routes.menu_item import MenuItemList, MenuItemById, MenuItem
 from routes.review import ReviewList, ReviewById, Review
 from routes.event import EventList, EventById, Event
 from routes.faq import FAQList, FAQById, FAQ
+from routes.contact import ContactMessage, ContactSubmission, ContactList
 
 
 
@@ -49,12 +51,20 @@ def create_folder_and_media_for_user_and_room(user_id, room_id, media_data_list)
 
     return folder, media_data_list  # Optionally return the created data for verification
 
-scheduler = BackgroundScheduler()
-scheduler.add_job(func=notify_users, trigger="interval", seconds=60)  # Run notify_users every 60 seconds
-def scheduled_notify_users():
+scheduler = APScheduler()
+
+def wrapped_notify_users():
     with app.app_context():
         notify_users()
 
+scheduler.add_job(
+    id='notify_users',
+    func=wrapped_notify_users,
+    trigger='interval',
+    seconds=60
+)
+
+scheduler.init_app(app)
 scheduler.start()
 
 # Views go here!

@@ -1,0 +1,41 @@
+.privacy-container {
+    padding: 2rem;
+    max-width: 800px;
+    margin: auto;
+    font-family: 'Segoe UI', sans-serif;
+    color: #eee;
+    background-color: #000;
+    min-height: 100vh;
+  }
+  
+  .privacy-container h1 {
+    font-size: 2.5rem;
+    color: #f77555;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .privacy-container h3 {
+    font-size: 1.4rem;
+    margin-top: 2rem;
+    color: #fc9284;
+  }
+  
+  .privacy-container p {
+    font-size: 1rem;
+    color: #ccc;
+    line-height: 1.6;
+    margin-top: 0.5rem;
+  }
+  
+  .privacy-container ul {
+    list-style: square;
+    padding-left: 1.5rem;
+    margin-top: 0.5rem;
+  }
+  
+  .privacy-container li {
+    color: #ccc;
+    margin-bottom: 0.5rem;
+  }
+  

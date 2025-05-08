@@ -1,0 +1,21 @@
+.media-page {
+    padding: 2rem;
+    min-height: 100vh;
+    background-color: black;
+    color: white;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #f97316; /* orange */
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 2rem;
+  }
+  

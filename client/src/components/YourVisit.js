@@ -1,6 +1,7 @@
 // src/components/YourVisit.js
 import React from 'react';
 import ComingSoonBanner from '../components/ComingSoonBanner';
+import '../styles/YourVisit.css';
 
 const YourVisit = () => {
   return (

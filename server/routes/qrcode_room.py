@@ -4,7 +4,10 @@ from flask_restful import Resource
 from config import db, api, app
 from models.qr_code import QRCode
 from models.room import Room
+from models.media import Media
 from sqlalchemy.exc import SQLAlchemyError
+from models.users import User
+
 
 class ScanQRCode(Resource):
     def post(self):

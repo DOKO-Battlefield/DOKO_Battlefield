@@ -1,5 +1,7 @@
 // src/components/Roadmap.js
 import React from 'react';
+import '../styles/Roadmap.css';
+
 
 const Roadmap = () => {
   return (

@@ -1,0 +1,43 @@
+.experience-detail-page {
+    padding: 2rem;
+    max-width: 1000px;
+    margin: auto;
+    color: #fff;
+    background-color: #000;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .experience-detail-page h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #f77555;
+  }
+  
+  .wearable-section {
+    margin-bottom: 2.5rem;
+  }
+  
+  .wearable-section h2 {
+    font-size: 1.5rem;
+    color: #fc9284;
+    margin-bottom: 0.5rem;
+  }
+  
+  .wearable-section p {
+    font-size: 1rem;
+    color: #ccc;
+    margin-bottom: 1rem;
+  }
+  
+  .wearable-section ul {
+    list-style-type: square;
+    padding-left: 1.5rem;
+    color: #ccc;
+  }
+  
+  .wearable-section li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+  }
+  

@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ComingSoonBanner from '../components/ComingSoonBanner';
+import '../styles/vr-game.css';
 
 const VRGame = () => {
   return (
@@ -17,22 +18,22 @@ const VRGame = () => {
       <div className="vr-nav-grid">
         <div className="vr-link-card">
           <h2>🕹 Game Info</h2>
-          <Link to="/vr-game/info">Explore the Experience</Link>
+          <Link to="/vr-game/info" className="vr-game-link">Explore the Experience</Link>
         </div>
 
         <div className="vr-link-card">
           <h2>🎥 Screenshots & Demo</h2>
-          <Link to="/vr-game/screenshots">Watch Previews</Link>
+          <Link to="/vr-game/screenshots" className="vr-game-link">Watch Previews</Link>
         </div>
 
         <div className="vr-link-card">
           <h2>💌 Join Beta / Wishlist</h2>
-          <Link to="/vr-game/beta">Sign Up</Link>
+          <Link to="/vr-game/beta" className="vr-game-link">Sign Up</Link>
         </div>
 
         <div className="vr-link-card">
           <h2>📓 Developer Notes</h2>
-          <Link to="/vr-game/notes">Behind the Scenes</Link>
+          <Link to="/vr-game/notes" className="vr-game-link">Behind the Scenes</Link>
         </div>
       </div>
     </div>
