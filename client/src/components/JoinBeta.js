@@ -1,6 +1,7 @@
 // src/components/JoinBeta.js
 import React from 'react';
 import ComingSoonBanner from '../components/ComingSoonBanner';
+import '../styles/JoinBeta.css';
 
 const JoinBeta = () => {
   return (

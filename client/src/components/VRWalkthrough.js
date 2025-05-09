@@ -13,7 +13,7 @@ const VRWalkthrough = () => {
       {/* Replace the src URL with your real video, embed, or iframe link */}
       <div className="vr-video-container">
         <iframe
-          src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+        src="https://www.youtube.com/embed/Fy1lZMQ7FTc?si=OVIcaOWydeqdTabo"
           title="DOKO VR Walkthrough"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

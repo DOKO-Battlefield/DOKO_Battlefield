@@ -57,7 +57,7 @@ import FeastFieldMenu from './components/FeastFieldMenu';
 import DOKOYoniesMenu from './components/DOKOYoniesMenu';
 import DOKOBarMenu from './components/DOKOBarMenu';
 import VRGame from './pages/VRGame';
-import ScreenshotsDemo from './components/ScreenshotsDemo';
+import ScreenshotsDemo from './components/Screenshots&Demo';
 
 
 const routes = [

@@ -27,7 +27,7 @@
   
   .membership-perks {
     text-align: left;
-    color: #040404;
+    color: #000000;
     margin-bottom: 1.5rem;
     padding-left: 0;
     list-style: none;
@@ -35,6 +35,7 @@
   
   .membership-perks li {
     margin-bottom: 0.5rem;
+    color: #222
   }
   
   .membership-button {

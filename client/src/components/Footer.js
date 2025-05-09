@@ -32,13 +32,27 @@ export default function Footer() {
         </div>
 
         {/* Newsletter Signup */}
-        <div className="footer-newsletter">
-          <h4>Stay in the Loop</h4>
-          <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
-            <input type="email" placeholder="Your email" required />
-            <button type="submit">Sign Up</button>
-          </form>
-        </div>
+        <div className='footer-newsletter'>
+        <h4>Stay in the Loop</h4>
+        <form
+  className="newsletter-form"
+  onSubmit={async (e) => {
+    e.preventDefault();
+    const email = e.target.elements.email.value;
+    const response = await fetch('http://localhost:5000/api/newsletter', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email })
+    });
+    const result = await response.json();
+    alert(result.message);
+    e.target.reset();
+  }}
+>
+  <input type="email" name="email" placeholder="Your email" required />
+  <button type="submit">Sign Up</button>
+</form>
+</div>
 
         {/* Legal Links */}
         <div className="footer-legal">

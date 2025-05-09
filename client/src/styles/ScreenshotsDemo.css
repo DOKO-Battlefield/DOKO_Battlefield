@@ -1,0 +1,22 @@
+/* ScreenshotsDemo.css */
+.vr-screenshots-page {
+    padding: 2rem;
+    background-color: black;
+    color: white;
+    min-height: 100vh;
+    text-align: center;
+  }
+  
+  .vr-screenshots-page h1 {
+    font-size: 2.5rem;
+    color: #f76555;
+    margin-bottom: 1rem;
+  }
+  
+  .vr-screenshots-page p {
+    font-size: 1.2rem;
+    color: #ccc;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    line-height: 1.6;
+  }

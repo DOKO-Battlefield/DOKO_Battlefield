@@ -25,6 +25,7 @@ from routes.review import ReviewList, ReviewById, Review
 from routes.event import EventList, EventById, Event
 from routes.faq import FAQList, FAQById, FAQ
 from routes.contact import ContactMessage, ContactSubmission, ContactList
+from routes.newsletter import NewsletterSignup
 
 
 
