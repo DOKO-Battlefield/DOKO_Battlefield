@@ -1,13 +1,13 @@
 // src/pages/Profile.js
 import { useEffect, useState } from 'react'
 import '../styles/Profile.css';
-
+import api from '../utils/api';
 export default function Profile() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    const userId = 1; // 🔐 Replace with actual auth logic
-    fetch(`http://localhost:5000/profile/${userId}`)
+    const userId = 1; // Replace 
+    api.get(`/profile/${userId}`)
       .then(res => res.json())
       .then(data => setUser(data))
       .catch(err => console.error("Failed to load profile:", err));

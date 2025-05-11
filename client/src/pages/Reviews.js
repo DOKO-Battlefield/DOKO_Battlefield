@@ -2,34 +2,32 @@
 import { useEffect, useState } from 'react'
 import ReviewCard from '../components/ReviewCard'
 import '../styles/Reviews.css';
+import api from '../utils/api';
 
 export default function Reviews() {
   const [reviews, setReviews] = useState([])
   const [form, setForm] = useState({ username: '', room: '', rating: 5, comment: '' })
 
   useEffect(() => {
-    fetch('http://localhost:5000/reviews')
-      .then(res => res.json())
-      .then(data => setReviews(data))
-  }, [])
+    api.get('/reviews')
+      .then(res => setReviews(res.data))
+      .catch(err => console.error('Error fetching reviews:', err));
+  }, []);
 
   const handleChange = e => {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = e => {
-    e.preventDefault()
-    fetch('http://localhost:5000/reviews', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(form),
-    })
-      .then(res => res.json())
-      .then(newReview => {
-        setReviews([...reviews, newReview])
-        setForm({ username: '', room: '', rating: 5, comment: '' })
-      })
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    const res = await api.post('/reviews', form);
+    setReviews([...reviews, res.data]);
+    setForm({ username: '', room: '', rating: 5, comment: '' });
+  } catch (err) {
+    console.error('Error submitting review:', err);
   }
+};
 
   return (
     <div className="reviews-page">

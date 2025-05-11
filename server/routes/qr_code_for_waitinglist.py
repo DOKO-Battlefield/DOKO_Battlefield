@@ -61,7 +61,7 @@ class WaitingListStatus(Resource):
                 "Room 9": "white"
             }
 
-            color = room_colors.get(entry.room_id, "white")
+            color = room_colors.get(entry.room.room_name, "white")
             buzz = entry.position == 1  # Buzz if it's the user's turn
 
             return make_response({

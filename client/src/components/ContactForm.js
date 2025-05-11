@@ -1,6 +1,7 @@
 // src/components/PartnerContactForm.js
 import React, { useState } from 'react';
 import '../styles/PartnerContactForm.css';
+import api from '../utils/api';
 
 const PartnerContactForm = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -10,12 +11,10 @@ const PartnerContactForm = () => {
   const handleSubmit = async e => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:5000/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form)
-      });
-      if (response.ok) setSubmitted(true);
+      const response = await api.post('/api/contact', form);
+      if (response.status === 200 || response.status === 201) {
+        setSubmitted(true);
+      }
     } catch (error) {
       console.error("Error submitting form:", error);
     }

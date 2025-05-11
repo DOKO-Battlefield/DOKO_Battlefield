@@ -1,6 +1,7 @@
 // src/components/Footer.js
 import '../styles/Footer.css';
 import { Link } from 'react-router-dom';
+import api from '../utils/api';
 
 export default function Footer() {
   return (
@@ -39,15 +40,15 @@ export default function Footer() {
   onSubmit={async (e) => {
     e.preventDefault();
     const email = e.target.elements.email.value;
-    const response = await fetch('http://localhost:5000/api/newsletter', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email })
-    });
-    const result = await response.json();
-    alert(result.message);
+    try {
+    const response = await api.post('/api/newsletter', email);
+    alert(response.data.message);
     e.target.reset();
-  }}
+  } catch (error) {
+    console.error("Newsletter signup failed:", error);
+    alert("Something went wrong. Please try again.");
+  }
+}}
 >
   <input type="email" name="email" placeholder="Your email" required />
   <button type="submit">Sign Up</button>

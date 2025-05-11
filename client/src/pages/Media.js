@@ -2,13 +2,13 @@
 import '../styles/Media.css';
 import { useEffect, useState } from 'react'
 import MediaCard from '../components/MediaCard'
-
+import api from '../utils/api';
 export default function Media() {
   const [media, setMedia] = useState([]);
 
   useEffect(() => {
-    const qrCode = 'DOKO123-ALA'; // ← Replace with actual user QR later
-    fetch(`http://localhost:5000/media/qr/${qrCode}`)
+    const qrCode = 'DOKO123-ALA'; //replace
+    api.get(`/media/qr/${qrCode}`)
       .then(res => res.json())
       .then(data => setMedia(data))
       .catch(err => console.error("Failed to fetch media:", err));

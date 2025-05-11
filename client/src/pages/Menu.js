@@ -2,13 +2,14 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import MenuItemCard from '../components/MenuItemCard';
+import api from '../utils/api';
 
 export default function RestaurantMenu() {
   const { id } = useParams();
   const [restaurant, setRestaurant] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:5000/menu-items')
+    api.get('/menu-items')
       .then(res => res.json())
       .then(data => {
         const grouped = {};

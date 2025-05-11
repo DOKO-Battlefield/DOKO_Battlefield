@@ -1,6 +1,7 @@
 // src/pages/Contact.js
 import React, { useState } from 'react';
 import '../styles/Contact.css';
+import api from '../utils/api';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -19,12 +20,10 @@ const Contact = () => {
   const handleSubmit = async e => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:5000//api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
-      });
-      if (response.ok) setSubmitted(true);
+      const response = await api.post('/api/contact', formData);
+      if (response.status === 200) {
+        setSubmitted(true);
+      }
     } catch (error) {
       console.error("Error submitting form:", error);
     }

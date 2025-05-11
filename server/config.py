@@ -48,7 +48,7 @@ mail = Mail(app)
 api = Api(app)
 
 # Instantiate CORS
-CORS(app)
+CORS(app, supports_credentials=True, origins=["https://dokobattlefield.com"])
 # from models.users import User
 # from models.profile import Profile
 # from models.media import Media

@@ -2,12 +2,13 @@
 import '../styles/FAQ.css';
 import { useEffect, useState } from 'react'
 import FAQAccordion from '../components/FAQAccordion'
+import api from '../utils/api';
 
 export default function FAQ() {
   const [faqs, setFaqs] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/faqs')
+    api.get('/faqs')
       .then(res => res.json())
       .then(data => setFaqs(data));
   }, []);
