@@ -13,7 +13,7 @@ export default function TabletApp() {
           <Route path="/" element={<Welcome />} />
           <Route path="/form" element={<Form />} />
           <Route path="/confirm" element={<Confirm />} />
-          <Route path="/terms" element={<Terms />} />
+          {/* <Route path="/terms" element={<Terms />} /> */}
         </Routes>
       </div>
     </BrowserRouter>

@@ -10,7 +10,7 @@ export default function Confirm() {
       <p className="mb-2 text-gray-300">Necklace ID / QR Code:</p>
       <p className="text-2xl font-mono mb-6 bg-gray-800 p-2 rounded inline-block">{state.qrCode}</p>
 
-      <p className="text-gray-400">Keep your necklace on. It will light up and buzz when it's your time!</p>
+      <p className="text-gray-400">Keep your necklace on. It will be the key to your journey!</p>
     </div>
   )
 }
