@@ -10,7 +10,7 @@ const DOKOBar = () => {
       <h2 className="tagline">Every sip is power. Every drink is purpose.</h2>
 
       <p>
-        DOKO Bar is the world’s first **halal-friendly, fully electrolyte-powered drink lounge**. Every drink is designed to help you recover, recharge, and celebrate — naturally.
+        DOKO Bar is the world’s first clean, fully electrolyte-powered drink lounge**. Every drink is designed to help you recover, recharge, and celebrate — naturally.
       </p>
       <p>
         With bold ingredients, cultural blends, and no alcohol in sight, this is the future of nightlife hydration.

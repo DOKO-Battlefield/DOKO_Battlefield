@@ -19,7 +19,7 @@ const restaurantData = [
   },
   {
     name: 'DOKO Bar',
-    description: 'Signature mocktails and cultural beverages with a nightlife vibe.',
+    description: ' Electrolyte-powered drinks inspired by global cultures — crafted for recovery, energy, and celebration.',
     link: '/restaurants/bar',
     menuLink: '/menu/bar'
   }
