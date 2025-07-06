@@ -6,25 +6,33 @@ const DOKOBarMenu = () => {
   return (
     <div className="menu-page">
       <h1>🍹 DOKO Bar Menu</h1>
-      <h2>🍸 Signature Mocktails</h2>
+      <h2>💧 Recovery Fusions</h2>
       <ul>
-        <li>Golden Glow – Sparkling mango, hibiscus, edible flowers</li>
-        <li>Lavender Eclipse – Lavender syrup, lemon, chilled tonic</li>
-        <li>Sakura Storm – Cherry blossom tea, vanilla, crushed ice</li>
+        <li>**Electric Rose** – Coconut water, rose essence, sea salt, lime</li>
+        <li>**Jungle Reboot** – Mango, moringa, baobab powder, ginger</li>
+        <li>**Citrus Pulse** – Lemon balm, pink salt, tangerine, organic honey</li>
       </ul>
 
-      <h2>🌿 Cultural Beverages</h2>
+      <h2>🌿 Cultural Hydration</h2>
       <ul>
-        <li>Sweet Mint Moroccan Tea</li>
-        <li>Warm Ginger Pineapple Blend</li>
-        <li>Nigerian Chapman (non-alcoholic)</li>
+        <li>**Zobo Revive** – Hibiscus, ginger, tamarind, trace minerals</li>
+        <li>**Soul Mint Tea** – Moroccan mint, fresh herbs, Himalayan salt</li>
+        <li>**Golden Roots** – Turmeric, pineapple, black seed, honey</li>
       </ul>
 
-      <h2>🥤 House Classics</h2>
+      <h2>🍹 Celebration Sips</h2>
       <ul>
-        <li>Fresh-Pressed Juices</li>
-        <li>Hibiscus Lemonade</li>
-        <li>Cold Brew Herbal Mix</li>
+        <li>**Lavender Calm** – Lavender, date syrup, citrus minerals</li>
+        <li>**Aloe Pop** – Aloe vera, cucumber, sea salt, lime fizz</li>
+        <li>**Hibiscus Spark** – Hibiscus lemonade with magnesium boost</li>
+      </ul>
+
+      <h2>🥤 Core Hydration</h2>
+      <ul>
+        <li>Cold-pressed juices with electrolytes</li>
+        <li>Herbal iced teas + trace minerals</li>
+        <li>Bubble teas + electrolytes</li>
+        <li>Mineral-infused spring waters</li>
       </ul>
     </div>
   );

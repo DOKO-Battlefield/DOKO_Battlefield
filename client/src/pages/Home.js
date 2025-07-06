@@ -93,7 +93,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="footer">
-        &copy; {new Date().getFullYear()} DOKO Battlefield. Built with power + purpose 💜
+        {/* &copy; {new Date().getFullYear()} DOKO Battlefield. Built with power + purpose 💜 */}
       </footer>
     </div>
   );

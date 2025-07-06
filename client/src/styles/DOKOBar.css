@@ -20,7 +20,13 @@
     line-height: 1.6;
     color: #dcdcdc;
   }
-  
+  .tagline {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #c57cc2;
+    margin-bottom: 2rem;
+    font-style: italic;
+  }
   .menu-link {
     display: inline-block;
     margin-top: 2rem;
