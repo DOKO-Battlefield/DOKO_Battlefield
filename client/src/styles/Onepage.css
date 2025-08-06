@@ -1,0 +1,266 @@
+/* src/styles/Onepage.css */
+
+/* General Styling */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background-color:  #000 ;
+  color: #f7f7f7;
+  scroll-behavior: smooth;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  border-bottom: 2px solid #ff4141;
+  display: inline-block;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  width: 60px;
+  height: 3px;
+  background: #f54242;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+}
+
+.section-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #000;
+  padding: 1rem 2rem;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  top: 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: #f7f7f7;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ff4141;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+.hero.video-hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background-color: black;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  filter: brightness(0.4); /* Optional dimming */
+}
+
+.hero-overlay {
+  position: relative;
+  z-index: 1;
+  padding: 4rem 2rem;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #fff;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin: 1rem 0 2rem;
+  color: #ddd;
+}
+
+.hero-button {
+  background-color: #ff4141;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  margin: 0.5rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.hero-button:hover {
+  background-color: #ff2020;
+  transform: scale(1.05);
+}
+
+/* Section Styling */
+.about, .long-term, .traction, .why-me, .home-cta {
+  padding: 6rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Traction Timeline */
+.timeline {
+  padding-left: 1.5rem;
+  border-left: 3px solid #ff4141;
+}
+
+.timeline li {
+  margin-bottom: 1.2rem;
+  position: relative;
+  font-size: 1rem;
+  color: #fff;
+  list-style: none;
+  padding-left: 1rem;
+}
+
+.timeline li::before {
+  content: '✔';
+  position: absolute;
+  left: -1.7rem;
+  top: 0;
+  color: #ff4141;
+  font-weight: bold;
+}
+
+/* Vision Roadmap Grid */
+.roadmap {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.roadmap li {
+  background: #1a1a1a;
+  padding: 1rem;
+  border-left: 5px solid #f54242;
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+.roadmap li:hover {
+  transform: translateY(-5px);
+  background: #222;
+}
+
+/* Footer */
+.footer {
+  background-color: #000;
+  color: #888;
+  padding: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Founder Layout */
+.why-me {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  padding: 6rem 2rem;
+  background-color: #000;
+  color: #fff;
+  flex-wrap: wrap;
+}
+
+.founder-photo {
+  max-width: 500px;
+  width: 60%;
+  border-radius: 12px;
+}
+
+.founder-text {
+  flex: 1;
+  min-width: 300px;
+  align-items: center;
+}
+
+.founder-text h3 {
+  font-size: 1.8rem;
+  margin: 0.5rem 0;
+}
+
+.founder-text p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  color: #f7f7f7;
+}
+
+#problem,
+#solution,
+#traction,
+#vision,
+#founder{
+  background-color: #000 !important;
+  color: #f7f7f7 !important;
+   align-items: center;
+}
+
+.traction,
+.long-term,
+.home-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+   text-align: center;
+}
