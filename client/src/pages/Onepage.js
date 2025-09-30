@@ -1,28 +1,70 @@
 // src/pages/Onepage.js
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
-
 import '../styles/Onepage.css';
 
 
 export default function Onepage() {
-    useEffect(() => {
-  const fadeElements = document.querySelectorAll('.fade-in');
+  const videoRef = useRef(null);
+  const [muted, setMuted] = useState(false);     
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [volume, setVolume] = useState(1); // full volume
 
-  const handleScroll = () => {
-    fadeElements.forEach((el) => {
-      const rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight - 100) {
-        el.classList.add('visible');
-      }
-    });
+
+  useEffect(() => {
+    const fadeElements = document.querySelectorAll('.fade-in');
+    const handleScroll = () => {
+      fadeElements.forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) el.classList.add('visible');
+      });
+    };
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const handleVolumeChange = (e) => {
+  const v = videoRef.current;
+  if (!v) return;
+  const newVolume = parseFloat(e.target.value);
+  v.volume = newVolume;
+  setVolume(newVolume);
+};
+
+  const toggleMute = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.muted = !v.muted;
+    setMuted(v.muted);
   };
 
-  window.addEventListener('scroll', handleScroll);
-  handleScroll(); // initial load
+  const togglePlay = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    if (v.paused) {
+      v.play();
+      setIsPlaying(true);
+    } else {
+      v.pause();
+      setIsPlaying(false);
+    }
+  };
 
-  return () => window.removeEventListener('scroll', handleScroll);
-}, []);
+  const restartVideo = () => {
+  const v = videoRef.current;
+  if (!v) return;
+  v.currentTime = 0;   // go back to start
+  v.play();            // start playing again
+  setIsPlaying(true);
+};
+// after refs/state
+useEffect(() => {
+  if (videoRef.current) {
+    videoRef.current.volume = volume;   // ensure slider value is applied on mount
+    videoRef.current.muted = muted;     // matches your default
+  }
+}, []); // run once
 
 
   return (
@@ -42,15 +84,37 @@ export default function Onepage() {
 
       {/* Hero Banner */}
      <section id="hero" className="hero video-hero">
-  <video
-    autoPlay
-    loop
-    playsInline
-    className="hero-video"
-  >
-    <source src="/videos/DOKO_Battlefield_Preview.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
+    <video
+  ref={videoRef}
+  autoPlay
+  loop
+  playsInline
+  muted={muted}    
+  className="hero-video"
+>
+  <source src="/videos/DOKO_Battlefield_Preview.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+
+        {/* Custom controls */}
+      <div className="video-controls" role="group" aria-label="Hero video controls">
+  <button className="video-btn" onClick={togglePlay}>
+    {isPlaying ? "⏸️ Pause" : "▶️ Play"}
+  </button>
+  <button className="video-btn" onClick={restartVideo}>
+    🔁 Restart
+  </button>
+  <input
+    type="range"
+    min="0"
+    max="1"
+    step="0.05"
+    value={volume}
+    onChange={handleVolumeChange}
+    aria-label="Volume control"
+  />
+</div>
+
 
   <div className="hero-overlay">
     <div className="logo">
@@ -61,7 +125,7 @@ export default function Onepage() {
       Immersive combat sport, wearable tech, and rhythm-based VR — all in one unforgettable experience.
     </p>
     <Link to="/vr-tour" className="hero-button">Watch the Walkthrough</Link>
-    <Link to="/vision" className="hero-button">Join Our Vision</Link>
+    <Link to="/contact" className="hero-button">Join Our Vision</Link>
   </div>
 </section>
 
@@ -116,7 +180,7 @@ DOKO is building a new category — where movement, tech, and story come togethe
 
       {/*  Project Milestones (Traction) */}
       <section id="traction" className="traction fade-in">
-  <h2 className="section-title">Project Milestones (Traction)</h2>
+  <h2 className="section-title">Project Milestones (Traction)!</h2>
   <p className="section-text">
     I’ve bootstrapped DOKO Battlefield from the ground up — combining my skills in tech, design, and business to build a clear foundation with real progress.
   </p>
@@ -135,7 +199,7 @@ DOKO is building a new category — where movement, tech, and story come togethe
 
       {/* Our Vision (Long-Term) */}
       <section id="vision" className="long-term fade-in">
-        <h2 className="section-title">Our Vision</h2>
+        <h2 className="section-title">Our Vision!</h2>
         
         <p className="section-text">DOKO Battlefield is just the beginning. My long-term vision is to grow DOKO into a 
         global entertainment and tech brand that redefines what it means to play, train, connect, and belong. </p>
@@ -155,7 +219,7 @@ DOKO is building a new category — where movement, tech, and story come togethe
         <section id="founder" className="why-me fade-in">
         <img src="/Treneese.png" alt="Treneese Johnson" className="founder-photo" />
           <div className="founder-text">
-    <h2 className="section-title">Why me</h2>
+    <h2 className="section-title">Why me?</h2>
         <h3>Treneese Johnson</h3>
         <p><strong>Founder</strong></p>
         <p>

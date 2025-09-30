@@ -92,9 +92,11 @@ body, html {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 0;
+  z-index: 1;
   filter: brightness(0.4); /* Optional dimming */
 }
+
+
 
 .hero-overlay {
   position: relative;
@@ -264,3 +266,89 @@ body, html {
   justify-content: center;
    text-align: center;
 }
+.video-hero {
+  position: relative; /* create a positioning context */
+}
+
+.video-controls {
+  position: absolute;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+  z-index: 10;
+  transition: opacity .2s ease;
+}
+
+/* follow your red-accent rounded buttons */
+.video-btn {
+  background: #e54743;           /* your red accent */
+  color: #fff;
+  font-weight: 600;
+  padding: 8px 12px;
+  border: 0;
+  border-radius: 12px;
+  cursor: pointer;
+  line-height: 1;
+}
+.video-btn:hover { opacity: .9; }
+.video-btn:active { transform: translateY(1px); }
+
+/* volume slider styled to match */
+.video-controls input[type="range"] {
+  width: 120px;
+  height: 4px;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* WebKit */
+.video-controls input[type="range"]::-webkit-slider-runnable-track {
+  height: 4px;
+  background: rgba(255,255,255,0.3);
+  border-radius: 999px;
+}
+.video-controls input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  margin-top: -6px;              /* centers thumb on 4px track */
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #e54743;           /* red accent */
+  border: 2px solid white;
+}
+
+/* Firefox */
+.video-controls input[type="range"]::-moz-range-track {
+  height: 4px;
+  background: rgba(255,255,255,0.3);
+  border-radius: 999px;
+}
+.video-controls input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border: 2px solid white;
+  border-radius: 50%;
+  background: #e54743;
+}
+
+/* Mobile tuning */
+@media (max-width: 640px) {
+  .video-controls {
+    bottom: 16px;
+    padding: 8px 10px;
+    gap: 8px;
+  }
+  .video-btn { padding: 7px 10px; font-size: 14px; }
+  .video-controls input[type="range"] { width: 90px; }
+}
+.video-controls { opacity: .95; }
+.video-hero:hover .video-controls { opacity: 1; }
