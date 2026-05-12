@@ -1,18 +1,96 @@
 // src/pages/Home.js
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Home.css';
 import ComingSoonBanner from '../components/ComingSoonBanner'; // ✅ Make sure this exists
+import '../styles/Onepage.css';
 
 export default function Home() {
+    const videoRef = useRef(null);
+    const [muted, setMuted] = useState(false);     
+    const [isPlaying, setIsPlaying] = useState(true);
+    const [volume, setVolume] = useState(1); // full volume
+
+
+const handleVolumeChange = (e) => {
+  const v = videoRef.current;
+  if (!v) return;
+  const newVolume = parseFloat(e.target.value);
+  v.volume = newVolume;
+  setVolume(newVolume);
+};
+
+  const toggleMute = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.muted = !v.muted;
+    setMuted(v.muted);
+  };
+
+  const togglePlay = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    if (v.paused) {
+      v.play();
+      setIsPlaying(true);
+    } else {
+      v.pause();
+      setIsPlaying(false);
+    }
+  };
+
+  const restartVideo = () => {
+  const v = videoRef.current;
+  if (!v) return;
+  v.currentTime = 0;   // go back to start
+  v.play();            // start playing again
+  setIsPlaying(true);
+};
+// after refs/state
+useEffect(() => {
+  if (videoRef.current) {
+    videoRef.current.volume = volume;   // ensure slider value is applied on mount
+    videoRef.current.muted = muted;     // matches your default
+  }
+}, []); // run once
+
+
+
   return (
     <div className="home">
 
       {/* Hero Banner */}
       <section className="hero video-hero">
-  <video autoPlay muted loop playsInline className="hero-video">
-    <source src="/videos/hero-bg.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
+   <video
+  ref={videoRef}
+  autoPlay
+  loop
+  playsInline
+  muted={muted}    
+  className="hero-video"
+>
+  <source src="/videos/DOKO_Battlefield_Preview.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+
+  {/* Custom controls */}
+      <div className="video-controls" role="group" aria-label="Hero video controls">
+  <button className="video-btn" onClick={togglePlay}>
+    {isPlaying ? "⏸️ Pause" : "▶️ Play"}
+  </button>
+  <button className="video-btn" onClick={restartVideo}>
+    🔁 Restart
+  </button>
+  <input
+    type="range"
+    min="0"
+    max="1"
+    step="0.05"
+    value={volume}
+    onChange={handleVolumeChange}
+    aria-label="Volume control"
+  />
+</div>
 
   <div className="hero-overlay">
   <div className="logo">

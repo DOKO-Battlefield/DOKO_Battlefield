@@ -12,7 +12,7 @@ const PitchDeckVision = () => {
       <div className="deck-container">
         {/* Embed a Google Drive or PDF viewer if you have it */}
         <iframe
-          src="https://drive.google.com/file/d/1CY36ke985GR-L15kQwuKYR4npBAoqZOQ/preview"
+          src="https://drive.google.com/file/d/1093SgGaoeCMIdaDywLiGqLTHNXqAHQB8/preview"
           title="DOKO Pitch Deck"
           width="100%"
           height="600"

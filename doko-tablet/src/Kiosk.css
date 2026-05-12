@@ -1,0 +1,354 @@
+/* KIOSK LAYOUT */
+
+.kiosk-shell {
+  min-height: 100vh;
+  display: flex;
+  background: radial-gradient(circle at top, #2b0a0a 0%, #050509 55%, #000 100%);
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+
+.kiosk-left {
+  flex: 0.9;
+  color: #fff;
+  padding: 2rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.16);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.kiosk-logo {
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.kiosk-title {
+  margin-top: 1rem;
+  font-size: 1.9rem;
+  font-weight: 700;
+}
+
+.kiosk-subtitle {
+  margin-top: 0.6rem;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.kiosk-bullets {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.kiosk-steps {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+}
+
+.kiosk-step {
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  opacity: 0.6;
+}
+
+.kiosk-step-active {
+  opacity: 1;
+  border-color: #ff3455;
+  box-shadow: 0 0 12px rgba(255, 52, 85, 0.7);
+}
+
+.kiosk-right {
+  flex: 1.5;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kiosk-card {
+  width: 100%;
+  max-width: 640px;
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  padding: 1.9rem;
+  color: #fff;
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.7);
+}
+
+.kiosk-card-title {
+  font-size: 1.5rem;
+  margin-bottom: 1.4rem;
+}
+
+/* FORM ELEMENTS (SCOPED) */
+
+.kiosk-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.k-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.k-field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.85rem;
+}
+
+.k-field label {
+  margin-bottom: 0.25rem;
+  opacity: 0.9;
+}
+
+.k-field label span {
+  color: #ff8c8c;
+}
+
+.k-input {
+  padding: 0.7rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.k-input:focus {
+  border-color: #ff3455;
+  box-shadow: 0 0 10px rgba(255, 52, 85, 0.7);
+}
+
+/* CHECKBOXES */
+
+.k-checkbox-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+}
+
+.k-checkbox {
+  margin-top: 0.1rem;
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.k-checkbox-row p {
+  margin: 0;
+  color: #e5e5e5;
+}
+
+.terms-link {
+  background: none;
+  border: none;
+  color: #ff8c8c;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+}
+
+.terms-link:hover {
+  text-decoration: underline;
+}
+
+/* BUTTON */
+
+.k-button-primary {
+  margin-top: 1.4rem;
+  width: 100%;
+  padding: 0.9rem 1.3rem;
+  border-radius: 999px;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  background: linear-gradient(135deg, #ff3455, #ff7b3a);
+  color: #fff;
+  box-shadow: 0 0 18px rgba(255, 52, 85, 0.85);
+}
+
+.k-button-primary:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+
+/* MODAL */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+  padding: 1.5rem;
+}
+
+.modal-content {
+  background-color: #111827; /* gray-900-ish */
+  border-radius: 0.85rem;
+  border: 1px solid #ce2222;
+  padding: 1.6rem;
+  width: 100%;
+  max-width: 768px;
+  height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.6rem;
+  color: #feb4b4;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.modal-close:hover {
+  color: #ffffff;
+}
+
+.modal-text {
+  white-space: pre-wrap;
+  color: #e5e7eb;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  margin-top: 2rem;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .kiosk-shell {
+    flex-direction: column;
+  }
+
+  .kiosk-left {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+    margin-bottom: 1rem;
+  }
+
+  .kiosk-right {
+    padding-top: 0.5rem;
+  }
+}
+/* ------------------ WELCOME PAGE ------------------ */
+
+.welcome-shell {
+  height: 100vh;
+  width: 100%;
+  background: #0e0e0e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome-box {
+  text-align: center;
+  padding: 2rem;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.welcome-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #ffffff; /* DOKO red */
+  margin-bottom: 1rem;
+}
+
+.welcome-sub {
+  font-size: 1.25rem;
+  color: #f9f7f7;
+  margin-bottom: 2.5rem;
+}
+
+/* ------------------ CONFIRMATION PAGE ------------------ */
+
+.confirm-shell {
+  height: 100vh;
+  width: 100%;
+  background: #0e0e0e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.confirm-box {
+  background: #1a1a1a;
+  padding: 2.5rem;
+  border-radius: 1rem;
+  width: 90%;
+  max-width: 450px;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.2);
+  animation: fadeIn 0.6s ease-out;
+}
+
+.confirm-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #d32f2f;
+  margin-bottom: 1.25rem;
+}
+
+.confirm-label {
+  color: #bbb;
+  margin-bottom: 0.25rem;
+}
+
+.confirm-code {
+  background: #2a2a2a;
+  color: #fff;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  font-family: monospace;
+  margin-bottom: 1.5rem;
+}
+
+.confirm-note {
+  color: #999;
+  font-size: 0.95rem;
+}
+
+.kiosk-btn {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.6rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.kiosk-btn.primary {
+  background: #aa0000;
+  color: #fff;
+}
+
+.kiosk-btn.primary:hover {
+  background: #d83a3a;
+}

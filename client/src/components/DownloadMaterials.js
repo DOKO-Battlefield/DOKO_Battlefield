@@ -35,13 +35,13 @@ const DownloadMaterials = () => {
           📊 Financial Projections (2025–2029)
         </a>
 
-        <a
+        {/* <a
           href="/Founder_Vision_Letter.pdf"
           download
           className="download-link"
         >
           💌 Founder Vision Letter
-        </a>
+        </a> */}
       </div>
 
       <p className="note">

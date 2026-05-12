@@ -70,7 +70,7 @@ useEffect(() => {
   return (
     <div className="onepage">
 
-        <nav className="navbar">
+        {/* <nav className="navbar">
   <ul className="nav-links">
     <li><a href="#hero">Home</a></li>
     <li><a href="#problem">Problem</a></li>
@@ -80,7 +80,7 @@ useEffect(() => {
     <li><a href="#founder">Founder</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-</nav>
+</nav> */}
 
       {/* Hero Banner */}
      <section id="hero" className="hero video-hero">
@@ -192,8 +192,11 @@ DOKO is building a new category — where movement, tech, and story come togethe
     <li>✅ Naqi VR Game in development — a rhythm-based, body-controlled combat experience</li>
     <li>✅ Brand extensions like DOKO Feast Field and The Shop fully conceptualized</li>
     <li>✅ Social media channels created and launched, outreach to 40+ investors</li>
-    <li>✅ Full business plan, 3-year projections, and pop-up roadmap complete</li>
+    <li>✅ Full business plan, 3-phase roadmap (Pop-Up → Detroit Pilot → Atlanta Flagship), and financial projections complete</li>
     <li>✅ Accepted in the Pegasus Ignite program</li>
+    <li>✅ Completed 3 Lvlup bootcamps</li>
+     <li>✅ Entered 2 Lvlup pitch competition</li>
+    <li>✅ Currently in the Lvlup Labs program</li>
   </ul>
 </section>
 
@@ -201,8 +204,10 @@ DOKO is building a new category — where movement, tech, and story come togethe
       <section id="vision" className="long-term fade-in">
         <h2 className="section-title">Our Vision!</h2>
         
-        <p className="section-text">DOKO Battlefield is just the beginning. My long-term vision is to grow DOKO into a 
-        global entertainment and tech brand that redefines what it means to play, train, connect, and belong. </p>
+        <p className="section-text">
+  We’re starting with a self-funded Detroit Pop-Up, building toward a Detroit Pilot facility, and then 
+  scaling into the flagship Atlanta arena — each phase expanding what DOKO can offer in impact, tech, and reach.
+</p>
  <h4 className="section-title">We’re starting with a flagship location, but the long-term umbrella includes:</h4>
    <ul className="roadmap">
 <li>Multiple DOKO Battlefield venues in major cities, each tailored to reflect local culture and community</li>
@@ -260,10 +265,6 @@ DOKO is building a new category — where movement, tech, and story come togethe
         <Link to="/contact" className="hero-button">Get In Touch </Link>
       </section>
 
-      {/* Footer */}
-      <footer className="footer">
-       <p>Contact: treneese.johnson@dokobattlefield.com</p>
-    </footer>
     </div>
   );
 }

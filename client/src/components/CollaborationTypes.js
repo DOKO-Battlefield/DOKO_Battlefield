@@ -1,47 +1,68 @@
 // src/pages/CollaborationTypes.js
-import React from 'react';
-import ComingSoonBanner from '../components/ComingSoonBanner';
-import "../styles/CollaborationTypes.css"
+import React from "react";
+import ComingSoonBanner from "../components/ComingSoonBanner";
+import "../styles/CollaborationTypes.css";
 
 const CollaborationTypes = () => {
   return (
     <div className="partner-page">
-      <h1>🔗 Explore Collaboration Opportunities</h1>
+      <h1>🔗 Collaboration Opportunities</h1>
+
       <p>
-        DOKO Battlefield thrives on community, culture, and creative partnerships.  
-        We’re actively exploring collaborations with artists, educators, brands, technologists, and mission-aligned organizations.
+        DOKO Battlefield is a multi-phase world built on community, culture, and 
+        collaboration. As we launch our Detroit Pop-Up and build toward the Detroit 
+        Pilot, we're partnering with organizations who want to shape the future of 
+        combat-inspired recreation.
       </p>
 
       <div className="collab-types-list">
+
         <div className="collab-type">
-          <h2>🎨 Artist Collaborations</h2>
-          <p>Design immersive rooms, wearable styles, or themed missions. Custom commissions welcome.</p>
+          <h2>🎨 Artist & Creative Collaborations</h2>
+          <p>
+            Visual artists, designers, creatives, and builders can help shape 
+            immersive rooms, visual identity, and worldbuilding elements.
+          </p>
         </div>
 
         <div className="collab-type">
-          <h2>🏫 School & Youth Programs</h2>
-          <p>Co-develop physical education field trips, conflict resolution games, or safe exploration environments.</p>
+          <h2>🏫 Schools & Youth Organizations</h2>
+          <p>
+            Work with us on safe combat sports programs, educational activations, 
+            field trips, and youth empowerment sessions.
+          </p>
         </div>
 
         <div className="collab-type">
           <h2>🤝 Brand Partnerships</h2>
-          <p>Bring your brand to life through custom events, sponsored arenas, or media package integrations.</p>
+          <p>
+            From sponsorships to custom activations, brands can play a key role 
+            in helping us launch community-first experiences in Detroit.
+          </p>
         </div>
 
         <div className="collab-type">
-          <h2>📹 Content Creator Access</h2>
-          <p>Early entry, exclusive media zones, creator battle nights, and special backstage missions.</p>
+          <h2>📹 Content Creators & Media</h2>
+          <p>
+            Early access, behind-the-scenes content, exclusive pop-up nights, 
+            and brand storytelling opportunities.
+          </p>
         </div>
 
         <div className="collab-type">
-          <h2>🧘 Cultural & Wellness Orgs</h2>
-          <p>Create spaces that explore healing, identity, and power through mindful combat experiences.</p>
+          <h2>🧘 Community, Culture & Wellness Groups</h2>
+          <p>
+            Collaborate on experiences that center identity, healing, strength, 
+            and community-building through guided movement.
+          </p>
         </div>
+
       </div>
 
-      <ComingSoonBanner message="Full collab guide and proposal form coming soon." />
+      <ComingSoonBanner message="Full collaboration guide launching with the Detroit Pilot." />
     </div>
   );
 };
 
 export default CollaborationTypes;
+

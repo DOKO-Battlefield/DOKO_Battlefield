@@ -12,11 +12,13 @@ function Header() {
 
   const navLinks = [
     { name: "Home", to: "/" },
-    { name: "Events", to: "/events" },
-    { name: "Food & Drinks", to: "/restaurants" },
-    { name: "The Experience", to: "/experience" },
-    { name: "Media Vault", to: "/media" },
-    { name: "VR Game", to: "/vr-game" },
+     { name: "About", to: "/about"},
+    // { name: "Events", to: "/events" },
+    // { name: "Food & Drinks", to: "/restaurants" },
+    // { name: "The Experience", to: "/experience" },
+     { name: "Pop-up", to: "/popup" },
+    // { name: "Media Vault", to: "/media" },
+    // { name: "VR Game", to: "/vr-game" },
     { name: "Investors", to: "/investors" },
     { name: "Partners", to: "/partners"},
     { name: "Contact", to: "/contact"},

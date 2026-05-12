@@ -48,8 +48,16 @@ mail = Mail(app)
 api = Api(app)
 
 # Instantiate CORS
-CORS(app, supports_credentials=True, origins=["https://dokobattlefield.com", "https://doko-tablet-g6zwxvcxq-treneeses-projects.vercel.app"])
-# from models.users import User
+CORS(
+  app,
+  supports_credentials=True,
+  resources={r"/*": {"origins": [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "https://doko-tablet-g6zwxvcxq-treneeses-projects.vercel.app",
+    "https://dokobattlefield.com",
+  ]}}
+)
 # from models.profile import Profile
 # from models.media import Media
 # from models.folder import Folder

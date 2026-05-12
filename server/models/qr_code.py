@@ -13,8 +13,8 @@ class QRCode(db.Model, SerializerMixin):
     room_id = db.Column(db.Integer, db.ForeignKey('rooms.id'))
     created_at = db.Column(db.DateTime, server_default=db.func.now())
 
-    user = db.relationship('User', backref='qr_code')
-    room = db.relationship('Room', backref='qr_codes')
+    user = db.relationship('User', backref=db.backref('qr_codes', lazy=True))
+    room = db.relationship('Room', backref=db.backref('qr_codes', lazy=True))
 
     def __repr__(self):
             return f'<QRCode id={self.id} room_id={self.room_id} user_id={self.user_id}>'

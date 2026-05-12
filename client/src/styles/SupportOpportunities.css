@@ -1,0 +1,103 @@
+/* PAGE WRAPPER */
+.support-page {
+  background: black;
+  color: white;
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  max-width: 900px;
+  margin: auto;
+  text-align: left;
+}
+
+/* PAGE TITLE */
+.support-page h1 {
+  text-align: center;
+  color: #ee2a03;
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+}
+
+/* INTRO PARAGRAPH */
+.support-page > p {
+  text-align: center;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: #d6d6d6;
+  max-width: 700px;
+  margin: 0 auto 3rem auto;
+}
+
+/* SECTIONS CONTAINER */
+.support-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* EACH SECTION CARD */
+.support-section {
+  background: #ffffff;
+  color: #000;
+  padding: 1.75rem;
+  border-radius: 1rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Hover effect */
+.support-section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+}
+
+/* SECTION TITLES */
+.support-section h2 {
+  margin-bottom: 0.75rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ee2a03;
+}
+
+/* SECTION TEXT */
+.support-section p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #111;
+}
+
+/* CONTACT BUTTON */
+.support-button {
+  display: inline-block;
+  margin: 3rem auto 0 auto;
+  text-align: center;
+  padding: 1rem 2rem;
+  background: #ee2a03;
+  color: white;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* Button hover */
+.support-button:hover {
+  background: #ff3d1a;
+  transform: scale(1.05);
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .support-page {
+    padding: 3rem 1rem;
+  }
+
+  .support-page h1 {
+    font-size: 2rem;
+  }
+
+  .support-section {
+    padding: 1.25rem;
+  }
+}

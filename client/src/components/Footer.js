@@ -18,7 +18,7 @@ export default function Footer() {
         <div className="footer-links">
           <Link to="/about">About</Link>
           <Link to="/faq">FAQ</Link>
-          <Link to="/membership">Membership</Link>
+          {/* <Link to="/membership">Membership</Link> */}
         </div>
 
         {/* Socials */}
@@ -56,10 +56,10 @@ export default function Footer() {
 </div>
 
         {/* Legal Links */}
-        <div className="footer-legal">
+        {/* <div className="footer-legal">
           <Link to="/privacy">Privacy Policy</Link>
           <Link to="/terms">Terms of Use</Link>
-        </div>
+        </div> */}
 
         {/* Bottom */}
         <div className="footer-copy">
