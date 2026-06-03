@@ -8,6 +8,7 @@ from flask import request, make_response
 from flask_restful import Resource
 from apscheduler.schedulers.background import BackgroundScheduler
 from flask_apscheduler import APScheduler
+from datetime import datetime, timedelta
 # Local imports
 from config import app, db, api, Flask
 # Add your model imports
@@ -29,7 +30,9 @@ from routes.newsletter import NewsletterSignup
 from routes.claim import ClaimAccount
 from routes.kiosk import KioskCheckin
 from routes.session import Session
-
+from routes.event_data import EventCheckinData, SportPlayLogData, EventSummaryData
+from routes.sport_play_log import SportPlayLogResource
+from models.event_checkin import EventCheckin
 
 
 
@@ -72,6 +75,34 @@ scheduler.add_job(
 
 scheduler.init_app(app)
 scheduler.start()
+
+def send_post_event_surveys():
+    with app.app_context():
+
+        attendees = EventCheckin.query.filter_by(
+            survey_sent_at=False
+        ).all()
+
+        for attendee in attendees:
+
+            survey_link = "https://tally.so/r/javA16"
+
+            print(f"Sending survey to {attendee.email}")
+
+            # email logic goes here
+
+            attendee.survey_sent = True
+
+        db.session.commit()
+
+
+scheduler.add_job(
+    id="send_surveys",
+    func=send_post_event_surveys,
+    trigger="date",
+    run_date=datetime(2026, 7, 19, 14, 0)
+)
+
 
 # Views go here!
 

@@ -94,7 +94,7 @@ const handleSubmit = async (e) => {
           <h1 className="kiosk-title">Detroit Pop-Up Check-In</h1>
           <p className="kiosk-subtitle">
             Get ready to begin your adventure. Free-entry, coach-led
-            rotations in archery, fencing, and kendo.
+            sessions in archery and fencing..
           </p>
 
           <div className="kiosk-bullets">
@@ -108,8 +108,8 @@ const handleSubmit = async (e) => {
           <span className="kiosk-step kiosk-step-active">
             1. Check-In Form
           </span>
-          <span className="kiosk-step">2. Scan QR / Necklace</span>
-          <span className="kiosk-step">3. Join Your Rotation</span>
+          <span className="kiosk-step">2. Finish Check-In</span>
+          <span className="kiosk-step">3. Join The Fight</span>
         </div>
       </aside>
 

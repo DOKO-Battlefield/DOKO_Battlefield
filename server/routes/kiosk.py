@@ -1,4 +1,5 @@
 # server/routes/kiosk.py
+
 import secrets
 from datetime import datetime
 
@@ -9,7 +10,7 @@ from sqlalchemy.exc import SQLAlchemyError
 from config import db, api
 from models.users import User
 from models.qr_code import QRCode
-from models.waiting_list import WaitingList
+from models.event_checkin import EventCheckin
 
 
 class KioskCheckin(Resource):
@@ -30,6 +31,7 @@ class KioskCheckin(Resource):
         guardian_name = data.get("guardian_name", "").strip()
         emergency_contact_name = data.get("emergency_contact_name", "").strip()
         emergency_contact_phone = data.get("emergency_contact_phone", "").strip()
+
         interests = data.get("interests", [])
         photos_opt_in = data.get("photos_opt_in", False)
         waiver_signed = data.get("waiver_signed", False)
@@ -84,22 +86,23 @@ class KioskCheckin(Resource):
             )
 
             db.session.add(qr)
+            db.session.flush()
 
-            last_position = (
-                db.session.query(db.func.max(WaitingList.position))
-                .filter(WaitingList.room_id == room_id)
-                .scalar()
-            )
-
-            next_position = (last_position or 0) + 1
-
-            entry = WaitingList(
+            event_checkin = EventCheckin(
                 user_id=user.id,
-                room_id=room_id,
-                position=next_position,
+                qr_code_id=qr.id,
+                age=age,
+                participant_type=participant_type,
+                guardian_name=guardian_name,
+                emergency_contact_name=emergency_contact_name,
+                emergency_contact_phone=emergency_contact_phone,
+                interests=interests,
+                photos_opt_in=photos_opt_in,
+                waiver_signed=waiver_signed,
+                agreed_terms=agreed_terms,
             )
 
-            db.session.add(entry)
+            db.session.add(event_checkin)
             db.session.commit()
 
             return make_response(
@@ -107,6 +110,7 @@ class KioskCheckin(Resource):
                     "message": "Check-in successful",
                     "user_id": user.id,
                     "code": code,
+                    "event_checkin_id": event_checkin.id,
                     "event_data": {
                         "age": age,
                         "participant_type": participant_type,
