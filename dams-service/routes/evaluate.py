@@ -1,12 +1,12 @@
-from flask import Blueprint, request, jsonify
+from flask import request
+from flask_restful import Resource
+
 from engine.evaluator import evaluate_player
 
-evaluate_bp = Blueprint('evaluate', __name__)
 
-@evaluate_bp.route('/evaluate', methods=['POST'])
-def evaluate():
-    data = request.get_json()
+class Evaluate(Resource):
+    def post(self):
+        data = request.get_json() or {}
+        result = evaluate_player(data)
 
-    result = evaluate_player(data)
-
-    return jsonify(result), 200
+        return result, 200

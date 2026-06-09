@@ -1,24 +1,42 @@
-@session_bp.route('/sessions/<int:session_id>/dams-update', methods=['PATCH'])
-def update_dams_state(session_id):
-    session = Session.query.get_or_404(session_id)
-    data = request.get_json()
+from flask import request
+from flask_restful import Resource
 
-    # Update current state
-    session.dams_state = data.get('state')
+from services.session_service import (
+    create_session,
+    get_session,
+    get_all_sessions,
+    end_session,
+)
 
-    # Update heart rate tracking
-    current_hr = data.get('heart_rate')
 
-    if current_hr:
-        if not session.heart_rate_min or current_hr < session.heart_rate_min:
-            session.heart_rate_min = current_hr
+class SessionList(Resource):
+    def post(self):
+        data = request.get_json() or {}
+        result = create_session(data)
+        return result, 201
 
-        if not session.heart_rate_max or current_hr > session.heart_rate_max:
-            session.heart_rate_max = current_hr
 
-    # Store rolling summary (optional but powerful)
-    session.summary_json = data.get('summary', session.summary_json)
+class SessionOverview(Resource):
+    def get(self):
+        return get_all_sessions(), 200
 
-    db.session.commit()
 
-    return jsonify({"message": "DAMS data updated"}), 200
+class SessionDetail(Resource):
+    def get(self, session_id):
+        result = get_session(session_id)
+
+        if not result:
+            return {"error": "Session not found"}, 404
+
+        return result, 200
+
+
+class SessionEnd(Resource):
+    def patch(self, session_id):
+        data = request.get_json() or {}
+        result = end_session(session_id, data)
+
+        if not result:
+            return {"error": "Session not found"}, 404
+
+        return result, 200
