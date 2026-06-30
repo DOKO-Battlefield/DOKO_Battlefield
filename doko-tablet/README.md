@@ -1,70 +1,104 @@
-# Getting Started with Create React App
+# DOKO Tablet
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The DOKO Tablet application is the operational hub used by volunteers and staff during live DOKO events. It streamlines participant check-in, QR code scanning, sport management, and event operations from a tablet interface.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+# Purpose
 
-### `npm start`
+The tablet application is designed to provide a fast, reliable, and easy-to-use interface for managing live events without requiring participants to interact directly with the backend systems.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Features
 
-### `npm test`
+## Participant Check-In
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- QR code scanning
+- Manual participant lookup
+- Registration verification
+- Fast event check-in
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Participant Management
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- View participant information
+- Update participant status
+- Attendance tracking
+- Registration validation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## Sport Management
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Assign participants to sports
+- Track participation
+- Manage station capacity
+- Volunteer-assisted check-in
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Event Operations
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Live participant counts
+- Event monitoring
+- Staff workflow
+- Real-time synchronization with the DOKO platform
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Technology Stack
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Frontend
 
-### Code Splitting
+- React
+- JavaScript
+- HTML
+- CSS
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Communication
 
-### Analyzing the Bundle Size
+- REST API
+- JSON
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+# Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```text
+doko-tablet/
+│
+├── src/
+├── public/
+├── package.json
+└── README.md
+```
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+# Workflow
 
-### Deployment
+1. Volunteer opens tablet
+2. Participant QR code is scanned
+3. Participant record is retrieved
+4. Check-in is confirmed
+5. Participant is assigned to activities
+6. Activity participation is recorded
+7. Data is synchronized with the DOKO backend
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+# Connected Services
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Server
+- Necklace Service
+- D'AMS Service
+
+---
+
+# Current Status
+
+Prototype / Active Development
+
+The tablet application is currently focused on supporting live event operations for the DOKO MVP and will continue expanding as additional platform features are introduced.
