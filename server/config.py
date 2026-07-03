@@ -54,11 +54,10 @@ CORS(
   resources={r"/*": {"origins": [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
-    "https://doko-tablet-g6zwxvcxq-treneeses-projects.vercel.app",
+    "https://doko-tablet-3313gylz7-treneeses-projects.vercel.app",
     "https://dokobattlefield.com",
     "https://doko-tablet-treneese-treneeses-projects.vercel.app",
-    "https://doko-tablet.vercel.app",
-    "https://doko-tablet-aelwdadmv-treneeses-projects.vercel.app"
+    "https://doko-tablet.vercel.app"
   ]}}
 )
 # from models.profile import Profile
