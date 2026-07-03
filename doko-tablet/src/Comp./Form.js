@@ -77,9 +77,15 @@ const handleSubmit = async (e) => {
       state: { qrCode: code, userId: user_id },
     });
   } catch (err) {
-    console.error(err);
-    alert("Something went wrong checking you in. Please tell a DOKO staff member.");
-  } finally {
+  console.error(err);
+
+  const message =
+    err.response?.data?.message ||
+    err.response?.data?.error ||
+    "Something went wrong. Please try again.";
+
+  alert(message);
+} finally {
     setSubmitting(false);
   }
 };

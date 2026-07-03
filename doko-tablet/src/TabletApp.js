@@ -4,7 +4,8 @@ import Welcome from './Comp./Welcome'
 import Form from './Comp./Form'
 import Confirm from './Comp./Confirm'
 import termsText from './Comp./Terms'
-import SportLog from './Comp./SportLog'
+import FencingLog from './Comp./FencingLog'
+import KarateLog from './Comp./KarateLog'
 
 export default function TabletApp() {
   return (
@@ -15,7 +16,8 @@ export default function TabletApp() {
           <Route path="/form" element={<Form />} />
           <Route path="/confirm" element={<Confirm />} />
            <Route path="/terms" element={<termsText />} /> 
-          <Route path="/sport-log" element={<SportLog />} />
+          <Route path="/fencing-log" element={<FencingLog />} />
+          <Route path="/karate-log" element={<KarateLog />} />
         </Routes>
       </div>
     </BrowserRouter>

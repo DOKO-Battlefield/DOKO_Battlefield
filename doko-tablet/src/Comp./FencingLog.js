@@ -1,14 +1,14 @@
-// src/tablet/SportLog.js
+// src/tablet/FencingLog.js
 import { useState } from "react";
 import api from "../utils/api";
 import "../Kiosk.css";
 
-export default function SportLog() {
-  const [code, setCode] = useState("");
-  const [sport, setSport] = useState("archery");
+export default function FencingLog() {
+  const [code, setCode] = useState("");;
   const [staffNote, setStaffNote] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [message, setMessage] = useState("");
+  const sport = "fencing";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,10 +23,12 @@ export default function SportLog() {
   setSubmitting(true);
 
   const payload = {
-    code: code.trim(),
-    sport,
-    staff_note: staffNote,
-  };
+  code: code.trim(),
+  sport,
+  staff_note: staffNote,
+};
+
+await api.post("/api/kiosk/play-log", payload);
 
   console.log("Sending play log:", payload);
 
@@ -34,7 +36,7 @@ export default function SportLog() {
 
   console.log("Play log response:", res.data);
 
-  setMessage(`${sport} play logged successfully.`);
+  setMessage(`Fencing session logged.`);
   setCode("");
   setStaffNote("");
 } catch (err) {
@@ -53,7 +55,7 @@ export default function SportLog() {
   return (
     <div className="confirm-shell">
       <div className="confirm-box">
-        <h2 className="confirm-title">Log Sport Play</h2>
+        <h2 className="confirm-title">Welcome to Fencing</h2>
 
         <form onSubmit={handleSubmit} className="kiosk-form">
           <div className="k-field">
@@ -66,7 +68,7 @@ export default function SportLog() {
             />
           </div>
 
-          <div className="k-field">
+          {/* <div className="k-field">
             <label>Sport</label>
             <select
               className="k-input"
@@ -76,7 +78,7 @@ export default function SportLog() {
               <option value="archery">Archery</option>
               <option value="fencing">Fencing</option>
             </select>
-          </div>
+          </div> */}
 
           <div className="k-field">
             <label>Staff Note Optional</label>
@@ -89,7 +91,7 @@ export default function SportLog() {
           </div>
 
           <button className="k-button-primary" disabled={submitting}>
-            {submitting ? "Logging..." : "Log Play"}
+            {submitting ? "Logging..." : "Log Fencing"}
           </button>
         </form>
 

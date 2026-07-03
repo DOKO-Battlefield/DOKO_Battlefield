@@ -18,8 +18,8 @@ class SportPlayLogResource(Resource):
         if not code:
             return make_response({"error": "QR/code is required"}, 400)
 
-        if sport not in ["archery", "fencing"]:
-            return make_response({"error": "Sport must be archery or fencing"}, 400)
+        if sport not in ["karate", "fencing"]:
+            return make_response({"error": "Sport must be karate or fencing"}, 400)
 
         qr = QRCode.query.filter_by(code=code).first()
 

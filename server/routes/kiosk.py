@@ -1,11 +1,12 @@
 # server/routes/kiosk.py
 
+import re
 import secrets
 from datetime import datetime
 
 from flask import request, make_response
 from flask_restful import Resource
-from sqlalchemy.exc import SQLAlchemyError
+from sqlalchemy.exc import IntegrityError, SQLAlchemyError
 
 from config import db, api
 from models.users import User
@@ -37,25 +38,66 @@ class KioskCheckin(Resource):
         waiver_signed = data.get("waiver_signed", False)
         agreed_terms = data.get("agreed_terms", False)
 
-        safe_username = f"{username}-{int(datetime.utcnow().timestamp())}"
+        # Required fields
+        if not first_name or not last_name or not username or not email:
+            return make_response({
+                "message": "Please fill in first name, last name, warrior name, and email."
+            }, 400)
+
+        # Clean email validation
+        email_pattern = r"^[^@\s]+@[^@\s]+\.[^@\s]+$"
+        if not re.match(email_pattern, email):
+            return make_response({
+                "message": "Please enter a valid email address."
+            }, 400)
 
         try:
             room_id = int(room_id)
             age = int(age)
         except (TypeError, ValueError):
-            return make_response({"error": "Invalid age or room ID"}, 400)
+            return make_response({
+                "message": "Please enter a valid age."
+            }, 400)
 
-        if not first_name or not last_name or not username or not email:
-            return make_response({"error": "Missing required user fields"}, 400)
+        if age <= 0:
+            return make_response({
+                "message": "Please enter a valid age."
+            }, 400)
 
-        if not age or not emergency_contact_name or not emergency_contact_phone:
-            return make_response({"error": "Missing event safety fields"}, 400)
+        if not emergency_contact_name or not emergency_contact_phone:
+            return make_response({
+                "message": "Please enter an emergency contact name and phone number."
+            }, 400)
 
         if age < 18 and not guardian_name:
-            return make_response({"error": "Guardian name is required for minors"}, 400)
+            return make_response({
+                "message": "A parent or guardian name is required for minors."
+            }, 400)
 
         if not waiver_signed or not agreed_terms:
-            return make_response({"error": "Waiver and terms must be accepted"}, 400)
+            return make_response({
+                "message": "Please accept the waiver and terms before continuing."
+            }, 400)
+
+        # Prevent duplicate email check-ins
+        existing_email = User.query.filter_by(email=email).first()
+        if existing_email:
+            return make_response({
+                "message": "This email has already checked in today."
+            }, 409)
+
+        # Prevent duplicate visible warrior names
+        existing_username = User.query.filter(
+            User.username.ilike(f"{username}-%")
+        ).first()
+
+        if existing_username:
+            return make_response({
+                "message": "That warrior name is already taken. Please choose another."
+            }, 409)
+
+        # Store safe unique username in database
+        safe_username = f"{username}-{int(datetime.utcnow().timestamp())}"
 
         try:
             temp_pw = secrets.token_urlsafe(18)
@@ -105,36 +147,47 @@ class KioskCheckin(Resource):
             db.session.add(event_checkin)
             db.session.commit()
 
-            return make_response(
-                {
-                    "message": "Check-in successful",
-                    "user_id": user.id,
-                    "code": code,
-                    "event_checkin_id": event_checkin.id,
-                    "event_data": {
-                        "age": age,
-                        "participant_type": participant_type,
-                        "guardian_name": guardian_name,
-                        "emergency_contact_name": emergency_contact_name,
-                        "emergency_contact_phone": emergency_contact_phone,
-                        "interests": interests,
-                        "photos_opt_in": photos_opt_in,
-                        "waiver_signed": waiver_signed,
-                        "agreed_terms": agreed_terms,
-                    },
+            return make_response({
+                "message": "Check-in successful",
+                "user_id": user.id,
+                "code": code,
+                "event_checkin_id": event_checkin.id,
+                "event_data": {
+                    "age": age,
+                    "participant_type": participant_type,
+                    "guardian_name": guardian_name,
+                    "emergency_contact_name": emergency_contact_name,
+                    "emergency_contact_phone": emergency_contact_phone,
+                    "interests": interests,
+                    "photos_opt_in": photos_opt_in,
+                    "waiver_signed": waiver_signed,
+                    "agreed_terms": agreed_terms,
                 },
-                201,
-            )
+            }, 201)
+
+        except IntegrityError as e:
+            db.session.rollback()
+            print("INTEGRITY ERROR:", e)
+
+            return make_response({
+                "message": "This information is already in use. Please check the email or warrior name and try again."
+            }, 409)
 
         except SQLAlchemyError as e:
             db.session.rollback()
             print("SQLALCHEMY ERROR:", e)
-            return make_response({"error": str(e)}, 400)
+
+            return make_response({
+                "message": "We could not complete check-in. Please try again."
+            }, 400)
 
         except Exception as e:
             db.session.rollback()
             print("KIOSK CHECKIN ERROR:", e)
-            return make_response({"error": str(e)}, 400)
+
+            return make_response({
+                "message": "Something went wrong. Please try again."
+            }, 400)
 
 
 api.add_resource(KioskCheckin, "/kiosk/checkin")
