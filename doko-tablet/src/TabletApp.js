@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Welcome from './Comp./Welcome'
 import Form from './Comp./Form'
 import Confirm from './Comp./Confirm'
-import termsText from './Comp./Terms'
 import FencingLog from './Comp./FencingLog'
 import KarateLog from './Comp./KarateLog'
 
