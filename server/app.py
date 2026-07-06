@@ -108,7 +108,7 @@ print("🔥 APP STARTED - NEW DEPLOYMENT LOADED 🔥")
 
 @app.route('/')
 def index():
-    return '<h1>DOKO Battlefield Backend</h1>'
+    return '<h1>DOKO Battlefield Main Backend</h1>'
 
 
 if __name__ == '__main__':
