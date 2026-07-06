@@ -103,7 +103,7 @@ scheduler.add_job(
     run_date=datetime(2026, 7, 19, 14, 0)
 )
 
-
+print("🔥 APP STARTED - NEW DEPLOYMENT LOADED 🔥")
 # Views go here!
 
 @app.route('/')
