@@ -36,7 +36,7 @@ from models.event_checkin import EventCheckin
 
 
 
-api.add_resource(KioskCheckin, "/kiosk/checkin")
+
 def create_folder_and_media_for_user_and_room(user_id, room_id, media_data_list):
     # Step 1: Create a Folder for the user and room
     folder = Folder(user_id=user_id, room_id=room_id, timestamp=datetime.utcnow())
@@ -102,9 +102,6 @@ scheduler.add_job(
     trigger="date",
     run_date=datetime(2026, 7, 19, 14, 0)
 )
-
-print("🔥 APP STARTED - NEW DEPLOYMENT LOADED 🔥")
-# Views go here!
 
 @app.route('/')
 def index():
