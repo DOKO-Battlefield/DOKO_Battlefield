@@ -1,105 +1,87 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/Popup.css";
+import api from '../utils/api';
 
 export default function PopUp() {
+  const [submitted, setSubmitted] = useState(false);
+
   return (
-    <div className="popup-page">
+    <div className="popup-page postponed-view">
+      {/* URGENT STATUS BANNER */}
+      <div className="alert-banner">
+        <h2>🚨 EVENT POSTPONED</h2>
+        <p>Due to severe storms and hazardous air quality, tomorrow's event is postponed for public safety.</p>
+      </div>
 
-      {/* HERO */}
-      <section className="popup-hero">
-        <h1>DOKO Battlefield Pop-Up</h1>
-        <p>
-          A high-energy, sports-only preview of DOKO Battlefield —
-          giving Detroit its first taste of modern combat entertainment.
-        </p>
-      </section>
+      <div className="postponed-container">
+        {/* FLYER DISPLAY */}
+        <div className="flyer-section">
+          <img 
+            src="/images/POSTPONED.png" 
+            alt="DOKO Battlefield Pop-Up Postponed Flyer" 
+            className="postponed-flyer"
+          />
+        </div>
 
-      {/* WHAT GUESTS EXPERIENCE */}
-      <section className="popup-section">
-        <h2>What Guests Experience</h2>
-        <ul>
-          <li>
-            <strong>Combat Training Rooms (3 Sports)</strong> — Instructor-led
-            beginner sessions in:
-            <br />• Kendo-style sword work  
-            • Olympic-style fencing  
-            • Precision archery
-          </li>
+        {/* SUBSCRIPTION & STATUS BOX */}
+        <div className="update-section">
+          <h1>We Will Keep You Updated</h1>
+          <p className="status-text">
+            Your safety is our top priority. We are actively monitoring the conditions and coordinating a new date for the <strong>DOKO Battlefield Pop-Up Experience</strong>.
+          </p>
 
-          <li>
-            <strong>Structured Rounds & Friendly Competition</strong> —
-            Timed rotations, simple scoring, and a smooth guest flow.
-          </li>
+          <div className="subscribe-box">
+            <h3>Want to be alerted when we have our new date?</h3>
+            <p>Subscribe below to get the new schedule delivered directly to your inbox.</p>
+            
+            {!submitted ? (
+              <form 
+  className="subscribe-form" // Kept this class name to match the CSS we wrote
+  onSubmit={async (e) => {
+    e.preventDefault();
+    
+    // 1. Correctly extract email from the named input field
+    const emailValue = e.target.elements.email.value; 
+    
+    try {
+      // 2. Wrap the email in an object: { email: "user@example.com" }
+      // Most REST APIs expect a JSON body object rather than a raw string.
+      await api.post('/api/newsletter', { email: emailValue });
+      
+      // 3. Update state instead of using a disruptive alert popup
+      setSubmitted(true); 
+      e.target.reset();
+    } catch (error) {
+      console.error("Newsletter signup failed:", error);
+      alert("Something went wrong. Please try again.");
+    }
+  }} 
+>
+  {/* Added name="email" to match your data fetching strategy */}
+  <input 
+    type="email" 
+    name="email" 
+    placeholder="Enter your email address" 
+    required 
+  />
+  <button type="submit" className="subscribe-button">
+    Notify Me
+  </button>
+</form>
 
-          <li>
-            <strong>Atmosphere & Media</strong> —
-            Lighting, music, and branded photo moments for shareable content.
-          </li>
-
-          <li>
-            <strong>Future Sneak Peeks</strong> —
-            Concept art + video previews of:
-            <br />• Smart wearables  
-            • Naqi VR combat game  
-            • Feast Field culinary zone  
-            (full features coming in the Detroit Pilot)
-          </li>
-        </ul>
-      </section>
-
-      {/* GOALS OF THIS POP-UP */}
-      <section className="popup-section">
-        <h2>Why This Pop-Up Matters</h2>
-        <p>
-          This pop-up is Phase Zero — our chance to gather real demand, test
-          operations, and showcase the core feeling of DOKO before the Detroit
-          Pilot. All revenue and data from this pop-up go toward building the
-          full DOKO Battlefield ecosystem.
-        </p>
-
-        <ul>
-          <li><strong>Validate pricing, demand, and session structure</strong></li>
-          <li><strong>Collect customer feedback & email signups</strong></li>
-          <li><strong>Strengthen partnerships with local combat instructors</strong></li>
-          <li><strong>Demonstrate traction for investors</strong></li>
-        </ul>
-      </section>
-
-      {/* WHAT’S INCLUDED + WHAT’S NOT */}
-      <section className="popup-section">
-        <h2>What’s Included</h2>
-        <ul>
-          <li>3 combat sports (fencing, kendo, archery)</li>
-          <li>Professional instructors</li>
-          <li>Safe, controlled training sessions</li>
-          <li>Branded media moments</li>
-          <li>Concept previews of DOKO’s future</li>
-        </ul>
-
-        <h2>What’s Not Included (Yet)</h2>
-        <ul>
-          <li>Smart wearable technology</li>
-          <li>Feast Field dining experience</li>
-          <li>Naqi VR training/gameplay</li>
-        </ul>
-
-        <p className="note">
-          These features launch in the <strong>Detroit Pilot</strong> (Phase 1).
-        </p>
-      </section>
-
-      {/* CALL TO ACTION */}
-      <section className="popup-cta">
-        <h2>Want to Partner or Sponsor?</h2>
-        <p>
-          We’re securing partners, venues, and early supporters now.
-          Let’s build Detroit’s newest sports + entertainment experience.
-        </p>
-        <a className="popup-button" href="/partners/contact-form">
-          Contact Us
-        </a>
-      </section>
-
+            ) : (
+              <div className="success-message">
+                <p>✓ Thank you! We will alert you as soon as the new date is locked in.</p>
+              </div>
+            )}
+          </div>
+          
+          <a href="/partners/contact-form" className="contact-link">
+            Sponsors & Partners Contact Form →
+          </a>
+        </div>
+      </div>
     </div>
   );
 }
+

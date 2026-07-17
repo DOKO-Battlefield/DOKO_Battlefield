@@ -52,8 +52,8 @@ CORS(
   app,
   supports_credentials=True,
   resources={r"/*": {"origins": [
-    # "http://localhost:3000",
-    # "http://127.0.0.1:3000",
+     "http://localhost:3000",
+     "http://127.0.0.1:3000",
     "https://dokobattlefield.com",
     "https://doko-tablet.vercel.app",
     "https://doko-tablet-treneese-treneeses-projects.vercel.app",
