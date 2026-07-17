@@ -8,6 +8,8 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.9.0",
+    "baseline-browser-mapping": "^2.10.43",
+    "caniuse-lite": "^1.0.30001806",
     "lucide-react": "^0.483.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

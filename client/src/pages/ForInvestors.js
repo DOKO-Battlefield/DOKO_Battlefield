@@ -9,10 +9,10 @@ const ForInvestors = () => {
       <h1>💼 For Investors</h1>
       // only change the paragraph
 <p className="investors-intro">
-  Welcome to the DOKO Battlefield investor portal. Here you'll find the materials, insights,
-  and documentation that showcase the vision, traction, and return potential of DOKO—from our
-  first pop-up and Detroit pilot to the flagship Atlanta arena and beyond.
-</p>
+        Welcome to the DOKO Battlefield investor portal. Here you'll find the materials, insights,
+        and documentation that showcase the vision, traction, and return potential of DOKO—from our
+        first pop-up and Detroit pilot to the flagship Atlanta arena and beyond.
+      </p>
 
 
       <div className="investor-grid">
@@ -28,11 +28,6 @@ const ForInvestors = () => {
           <Link to="/investors/financials" className="investor-link">View Financials</Link>
         </div>
 
-        {/* <div className="investor-card">
-          <h2>👥 Team & Advisors</h2>
-          <p>Meet the creators, leaders, and mentors behind DOKO’s success.</p>
-          <Link to="/investors/team" className="investor-link">Meet the Team</Link>
-        </div> */}
 
         <div className="investor-card">
           <h2>🛣️ Roadmap</h2>
@@ -51,3 +46,4 @@ const ForInvestors = () => {
 };
 
 export default ForInvestors;
+

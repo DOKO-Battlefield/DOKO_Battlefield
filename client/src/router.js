@@ -3,22 +3,22 @@ import App from './App'
 // src/router.js
 
 import About from './pages/About';
-import Membership from './pages/Membership';
-import Profile from './pages/Profile';
-import Restaurants from './pages/Restaurants';
-import GroupsAndTickets from './pages/GroupsAndTickets';
-import CustomBooking from './pages/CustomBooking';
-import Home from './pages/Home';
-import Events from './pages/Events&Bookings';
-import Menu from './pages/Menu';
-import Reviews from './pages/Reviews';
-import CombatSports from './components/CombatSports';
-import WearableTech from './components/WearableTech';
-import MediaVault from './pages/MediaVault';
+// import Membership from './pages/Membership';
+// import Profile from './pages/Profile';
+// import Restaurants from './pages/Restaurants';
+// import GroupsAndTickets from './pages/GroupsAndTickets';
+// import CustomBooking from './pages/CustomBooking';
+// import Home from './pages/Home';
+// import Events from './pages/Events&Bookings';
+// import Menu from './pages/Menu';
+// import Reviews from './pages/Reviews';
+// import CombatSports from './components/CombatSports';
+// import WearableTech from './components/WearableTech';
+// import MediaVault from './pages/MediaVault';
 import FAQ from './pages/FAQ';
 import Popup from './pages/Popup';
 import Contact from './pages/Contact';
-import Experience from './pages/Experience';
+// import Experience from './pages/Experience';
 import ForInvestors from './pages/ForInvestors';
 import PartnerWithUs from './pages/PartnerWithUs';
 import PrivacyPolicy from './components/PrivacyPolicy';
@@ -26,16 +26,16 @@ import TermsOfUse from './components/TermsOfUse';
 import Onepage from './pages/Onepage';
 
 // MediaVault components
-import Gallery from './components/Gallery';
-import Testimonials from './components/Testimonials';
-import ScreenshotsAndDemo from './components/Screenshots&Demo';
-import YourVisit from './components/YourVisit';
+// import Gallery from './components/Gallery';
+// import Testimonials from './components/Testimonials';
+// import ScreenshotsAndDemo from './components/Screenshots&Demo';
+// import YourVisit from './components/YourVisit';
 
 // VR + Game
 import VRWalkthrough from './components/VRWalkthrough';
-import GameInfo from './components/GameInfo';
-import JoinBeta from './components/JoinBeta';
-import DevelopersNotes from './components/DevelopersNotes';
+// import GameInfo from './components/GameInfo';
+// import JoinBeta from './components/JoinBeta';
+// import DevelopersNotes from './components/DevelopersNotes';
 
 // Investor-Focused
 import PitchDeckVision from './components/PitchDeck&Vision';
@@ -45,22 +45,22 @@ import FinancialProjection from './components/FinancialProjection';
 import DownloadMaterials from './components/DownloadMaterials';
 
 // Partner-Focused
-import VenueCoBranding from './components/Venue&Co-Branding';
-import TeamBuilding from './components/TeamBuilding';
-import PrivateEvents from './components/PrivateEvents';
-import ScheduleAVisit from './components/ScheduleAVisit';
+// import VenueCoBranding from './components/Venue&Co-Branding';
+// import TeamBuilding from './components/TeamBuilding';
+// import PrivateEvents from './components/PrivateEvents';
+// import ScheduleAVisit from './components/ScheduleAVisit';
 import PartnerContactForm from "./components/ContactForm";
 import CollaborationTypes from './components/CollaborationTypes';
 import SupportOpportunities from "./pages/SupportOpportunities";
 
-import DOKOFeastField from './components/DOKOFeastField';
-import DOKOYonies from './components/DOKOYonies';
-import DOKOBar from './components/DOKOBar';
-import FeastFieldMenu from './components/FeastFieldMenu';
-import DOKOYoniesMenu from './components/DOKOYoniesMenu';
-import DOKOBarMenu from './components/DOKOBarMenu';
-import VRGame from './pages/VRGame';
-import ScreenshotsDemo from './components/Screenshots&Demo';
+// import DOKOFeastField from './components/DOKOFeastField';
+// import DOKOYonies from './components/DOKOYonies';
+// import DOKOBar from './components/DOKOBar';
+// import FeastFieldMenu from './components/FeastFieldMenu';
+// import DOKOYoniesMenu from './components/DOKOYoniesMenu';
+// import DOKOBarMenu from './components/DOKOBarMenu';
+// import VRGame from './pages/VRGame';
+// import ScreenshotsDemo from './components/Screenshots&Demo';
 
 
 const routes = [

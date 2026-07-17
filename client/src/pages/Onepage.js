@@ -6,7 +6,7 @@ import '../styles/Onepage.css';
 
 export default function Onepage() {
   const videoRef = useRef(null);
-  const [muted, setMuted] = useState(false);     
+  const [muted] = useState(false);     
   const [isPlaying, setIsPlaying] = useState(true);
   const [volume, setVolume] = useState(1); // full volume
 
@@ -32,12 +32,7 @@ export default function Onepage() {
   setVolume(newVolume);
 };
 
-  const toggleMute = () => {
-    const v = videoRef.current;
-    if (!v) return;
-    v.muted = !v.muted;
-    setMuted(v.muted);
-  };
+ 
 
   const togglePlay = () => {
     const v = videoRef.current;
@@ -61,10 +56,11 @@ export default function Onepage() {
 // after refs/state
 useEffect(() => {
   if (videoRef.current) {
-    videoRef.current.volume = volume;   // ensure slider value is applied on mount
-    videoRef.current.muted = muted;     // matches your default
+    videoRef.current.muted = muted;
+    videoRef.current.volume = volume;
   }
-}, []); // run once
+}, [muted, volume]); 
+
 
 
   return (
@@ -268,3 +264,10 @@ DOKO is building a new category — where movement, tech, and story come togethe
     </div>
   );
 }
+
+ // const toggleMute = () => {
+  //   const v = videoRef.current;
+  //   if (!v) return;
+  //   v.muted = !v.muted;
+  //   setMuted(v.muted);
+  // };

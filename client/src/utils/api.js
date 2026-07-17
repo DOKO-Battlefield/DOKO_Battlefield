@@ -2,10 +2,12 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://doko-backend-production.up.railway.app', // your backend URL
-  withCredentials: false, // optional: for cookies/session auth
+  baseURL:
+    process.env.REACT_APP_API_URL ||
+    "http://127.0.0.1:5000",
+  withCredentials: false,
   headers: {
-    'Content-Type': 'application/json',
+    "Content-Type": "application/json",
   },
 });
 
